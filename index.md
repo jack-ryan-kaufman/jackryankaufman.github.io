@@ -30,3 +30,17 @@ I am a clinical psychology doctoral candidate at **UT Southwestern Medical Cente
 * **ASPIRE Lab:** Alleviating Symptoms through Psychiatric Imaging Research & Engineering
 * **MACA Lab:** Mood And Cognition in Aging
 * **APA Division 38:** Lifestyle Medicine/Exercise Task Group
+
+<style>
+  /* Hides the top bar with the 'View on GitHub' button */
+  header { display: none !important; }
+
+  /* Hides the 'Project maintained by' and 'Hosted on GitHub' footer */
+  footer { display: none !important; }
+
+  /* Removes the extra gap at the top where the bar used to be */
+  section { padding-top: 20px !important; }
+
+  /* Centers your content since the sidebar is gone */
+  .wrapper { width: 90% !important; max-width: 800px !important; margin: 0 auto !important; }
+</style>
