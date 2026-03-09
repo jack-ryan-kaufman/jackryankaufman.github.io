@@ -4,6 +4,8 @@ title: Jack R. Kaufman
 description: Doctoral Candidate | Clinical Psychology
 ---
 
+<img src="headshot.jpg" width="200" style="border-radius: 50%; float: right; margin-left: 20px;">
+
 # Jack R. Kaufman
 **Doctoral Candidate, Clinical Psychology** *UT Southwestern Medical Center | Parkland Health*
 
