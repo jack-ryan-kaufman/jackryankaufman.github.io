@@ -3,66 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jack R. Kaufman | Clinical Psychology</title>
+    <title>Jack R. Kaufman | UTSW</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        :root { --spacing: 1.5rem; }
-        body { padding: var(--spacing); max-width: 900px; margin: auto; }
-        .hero { display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; }
-        .hero img { border-radius: 50%; width: 180px; height: 180px; object-fit: cover; border: 4px solid #eee; }
-        .grid-interests div { padding: 1rem; border-left: 3px solid var(--primary); background: #f9f9f9; }
-        [data-theme="dark"] .grid-interests div { background: #1a1a1a; }
+        /* 1. Kills the jackryankaufman.github.io header */
+        nav, header h1:first-child { margin-top: 0; }
+        
+        body { 
+            max-width: 900px; 
+            margin: auto; 
+            padding: 4rem 2rem; 
+            background-color: #ffffff; 
+            color: #1a1a1a;
+        }
+
+        /* 2. Professional Hero Layout */
+        .hero { 
+            display: grid; 
+            grid-template-columns: 1.5fr 1fr; 
+            align-items: center; 
+            gap: 3rem; 
+            margin-bottom: 4rem; 
+        }
+
+        /* 3. Free-flowing Image Effect */
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 320px;
+            /* This 'Mask' creates the free-flowing fade-out effect at the bottom */
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            filter: contrast(1.05); /* Makes the clinical headshot pop */
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; border: none; }
+        .subtitle { font-size: 1.2rem; color: #666; margin-bottom: 1.5rem; }
+        article { border: none; background: #f8f9fa; border-left: 4px solid #005596; }
+        
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .profile-image { margin: 0 auto; }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <ul><li><strong>Jack R. Kaufman</strong></li></ul>
-        <ul>
-            <li><a href="cv.pdf" class="secondary">CV</a></li>
-            <li><a href="mailto:jackryankaufman@gmail.com" class="contrast">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <img src="headshot.jpg" alt="Jack R. Kaufman">
-        <div>
-            <h1>Jack R. Kaufman</h1>
-            <p>Doctoral Candidate in Clinical Psychology<br>
-            <strong>UT Southwestern Medical Center | Parkland Health</strong></p>
-        </div>
-    </header>
-
     <main>
-        <section id="about">
-            <h2>Clinical & Research Profile</h2>
-            <p>I am currently working on the <strong>Consult-Liaison (CL) Psychiatry Service at Parkland Hospital</strong> </p>
+        <div class="hero">
+            <div>
+                <h1>Jack R. Kaufman</h1>
+                <p class="subtitle">
+                    <strong>Doctoral Candidate, Clinical Psychology</strong><br>
+                    UT Southwestern Medical Center | Parkland Health
+                </p>
+                <p>
+                    <a href="cv.pdf" role="button" class="outline">View CV</a>
+                    <a href="mailto:jack.kaufman@utsouthwestern.edu" class="secondary" style="margin-left: 15px;">Email Me</a>
+                </p>
+            </div>
+            
+            <div class="profile-container">
+                <img src="headshot.jpg" alt="Jack R. Kaufman" class="profile-image">
+            </div>
+        </div>
+
+        <hr>
+
+        <section id="content">
+            <h2>Clinical & Research Focus</h2>
+            <p>I am a clinical psychology doctoral candidate at <strong>UT Southwestern Medical Center</strong>, currently working on the <strong>Consult-Liaison (CL) Service at Parkland Hospital</strong>.</p>
             
             <article>
                 <h3>Dissertation</h3>
-                <p><em>Carepartners in Electroconvulsive Therapy (ECT)</em><br>
-                Supervised by Dr. Shawn McClintock within the Interventional Psychiatry Research Program (IPRP).</p>
+                <p><strong> Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
+                <em>Conducted within the Interventional Psychiatry Research Program (IPRP) under Dr. Shawn McClintock.</em></p>
             </article>
-        </section>
 
-     I also work as a researcher in the Interventional Psychiatry Research Program under Dr. Shawn McClintock focusing on neuromodulation therapy outcomes. My dissertation is on carepartners in ECT. You can find more about that here:
-
-
-        <section id="interests">
-            <h2>Core Areas</h2>
             <div class="grid">
-                <div><strong>Consult-Liaison</strong><br><small>Collaborative care models</small></div>
-                <div><strong>Neuromodulation</strong><br><small>Functional outcomes</small></div>
-                <div><strong>Trauma</strong><br><small>Veteran health focus</small></div>
+                <div>
+                    <h4>Primary Interests</h4>
+                    <ul>
+                        <li>Consult-Liaison Psychology</li>
+                        <li>Neuromodulation Outcomes</li>
+                        <li>Trauma & Veteran Health</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Institutional Affiliations</h4>
+                    <ul>
+                        <li>ASPIRE Lab (Stony Brook)</li>
+                        <li>MACA Lab (Aging & Cognition)</li>
+                        <li>APA Division 38 Task Group</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-
-        <section id="collaborations">
-            <h2>Collaborators</h2>
-            <ul>
-                <li><strong>ASPIRE Lab</strong> (Stony Brook/Boston)</li>
-                <li><strong>MACA Lab</strong> (Mood & Cognition in Aging)</li>
-            </ul>
         </section>
     </main>
 
