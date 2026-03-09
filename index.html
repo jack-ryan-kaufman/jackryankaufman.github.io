@@ -6,48 +6,55 @@
     <title>Jack R. Kaufman | UTSW</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        /* 1. Kills the jackryankaufman.github.io header */
-        nav, header h1:first-child { margin-top: 0; }
-        
+        /* 1. Tightening the global container */
         body { 
-            max-width: 900px; 
+            max-width: 850px; 
             margin: auto; 
-            padding: 4rem 2rem; 
+            padding: 2rem 1.5rem; /* Reduced from 4rem */
             background-color: #ffffff; 
-            color: #1a1a1a;
+            line-height: 1.5;
         }
 
-        /* 2. Professional Hero Layout */
+        /* 2. Compact Hero Section */
         .hero { 
             display: grid; 
-            grid-template-columns: 1.5fr 1fr; 
+            grid-template-columns: 1.2fr 0.8fr; 
             align-items: center; 
-            gap: 3rem; 
-            margin-bottom: 4rem; 
-        }
-
-        /* 3. Free-flowing Image Effect */
-        .profile-container {
-            position: relative;
-            display: inline-block;
+            gap: 2rem; 
+            margin-bottom: 2rem; /* Reduced from 4rem */
         }
 
         .profile-image {
             width: 100%;
-            max-width: 320px;
-            /* This 'Mask' creates the free-flowing fade-out effect at the bottom */
-            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-            filter: contrast(1.05); /* Makes the clinical headshot pop */
+            max-width: 260px; /* Slightly smaller to reduce white space */
+            -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
         }
 
-        h1 { font-size: 3rem; margin-bottom: 0.5rem; border: none; }
-        .subtitle { font-size: 1.2rem; color: #666; margin-bottom: 1.5rem; }
-        article { border: none; background: #f8f9fa; border-left: 4px solid #005596; }
-        
+        h1 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+        .subtitle { font-size: 1.1rem; color: #444; margin-bottom: 1rem; }
+
+        /* 3. Refined Dissertation Box */
+        article { 
+            margin: 1.5rem 0;
+            padding: 1.25rem; /* Tighter padding */
+            border: none; 
+            background: #fdfdfd; 
+            border-left: 5px solid #005596; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Soft shadow for depth */
+        }
+        article h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #005596; }
+        article p { font-size: 0.95rem; margin: 0; }
+
+        /* 4. Tighter Grid */
+        .grid { gap: 2rem; margin-top: 1rem; }
+        h4 { font-size: 1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+        ul { font-size: 0.9rem; padding-left: 1.2rem; }
+        li { margin-bottom: 0.25rem; }
+
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; text-align: center; }
-            .profile-image { margin: 0 auto; }
+            .profile-image { margin: 0 auto; max-width: 220px; }
         }
     </style>
 </head>
@@ -61,10 +68,10 @@
                     <strong>Doctoral Candidate, Clinical Psychology</strong><br>
                     UT Southwestern Medical Center | Parkland Health
                 </p>
-                <p>
-                    <a href="cv.pdf" role="button" class="outline">View CV</a>
-                    <a href="mailto:jack.kaufman@utsouthwestern.edu" class="secondary" style="margin-left: 15px;">Email Me</a>
-                </p>
+                <div>
+                    <a href="cv.pdf" role="button" class="outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View CV</a>
+                    <a href="mailto:jackryankaufman@gmail.com" style="margin-left: 15px; font-size: 0.9rem; font-weight: 600;">Email</a>
+                </div>
             </div>
             
             <div class="profile-container">
@@ -72,16 +79,14 @@
             </div>
         </div>
 
-        <hr>
-
         <section id="content">
-            <h2>Clinical & Research Focus</h2>
-            <p>I am a clinical psychology doctoral candidate at <strong>UT Southwestern Medical Center</strong>, currently working on the <strong>Consult-Liaison (CL) Service at Parkland Hospital</strong>.</p>
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Clinical & Research Focus</h2>
+            <p style="font-size: 1rem; color: #333;">I am a clinical psychology doctoral candidate at <strong>UT Southwestern Medical Center</strong>, currently serving on the <strong>Consult-Liaison (CL) Service at Parkland Health</strong>.</p>
             
             <article>
-                <h3>Dissertation</h3>
-                <p><strong> Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <em>Conducted within the Interventional Psychiatry Research Program (IPRP) under Dr. Shawn McClintock.</em></p>
+                <h3>Dissertation Project</h3>
+                <p><strong>Informing Functional and Health Outcomes of Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
+                <small>Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock</small></p>
             </article>
 
             <div class="grid">
@@ -94,7 +99,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4>Institutional Affiliations</h4>
+                    <h4>Affiliations</h4>
                     <ul>
                         <li>ASPIRE Lab (Stony Brook)</li>
                         <li>MACA Lab (Aging & Cognition)</li>
