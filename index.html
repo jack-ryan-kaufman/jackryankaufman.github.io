@@ -6,57 +6,55 @@
     <title>Jack R. Kaufman | UTSW</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        /* 1. Tightening global container */
+        /* 1. Global container */
         body { 
             max-width: 850px; 
             margin: auto; 
-            padding: 1.5rem; /* Reduced from 2rem to continue white-space fix */
+            padding: 2rem 1.5rem; 
             background-color: #ffffff; 
             color: #1a1a1a;
             line-height: 1.5;
         }
 
-        /* 2. Compact Hero Section */
+        /* 2. Hero Section */
         .hero { 
             display: grid; 
             grid-template-columns: 1.2fr 0.8fr; 
             align-items: center; 
-            gap: 1.5rem; /* Reduced gap */
-            margin-bottom: 2.5rem; /* Reduced margin */
+            gap: 1.5rem; 
+            margin-bottom: 3.5rem; /* Increased spacing after hero */
         }
 
         .profile-image {
             width: 100%;
             max-width: 260px;
-            
-            /* 3. NEW: Subtle Horizontal Fade (Fading to the Right) */
-            /* -webkit- for Safari/iOS compatibility */
             -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
             mask-image: linear-gradient(to right, black 70%, transparent 100%);
-            
-            filter: contrast(1.05); /* Keeps clinical headshot sharp */
+            filter: contrast(1.05);
         }
 
         h1 { font-size: 2.5rem; margin-bottom: 0.25rem; border: none; }
         .subtitle { font-size: 1.1rem; color: #444; margin-bottom: 1rem; }
 
-        /* 4. Compressed Dissertation Box */
+        /* 3. PADDY DISSERTATION SECTION */
         article { 
-            margin: 1rem 0; /* Tighter margins */
-            padding: 1rem; /* Tighter padding */
+            margin: 3rem 0; /* Increased top/bottom margin for more "paddy" separation */
+            padding: 2rem; /* Increased internal padding for a roomier feel */
             border: none; 
             background: #fdfdfd; 
-            border-left: 5px solid #005596; /* UTSW Blue */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Soft depth shadow */
+            border-left: 5px solid #005596; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
         }
-        article h3 { font-size: 1.2rem; margin-bottom: 0.25rem; color: #005596; }
+        article h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #005596; }
         article p { font-size: 0.95rem; margin: 0; }
 
-        /* 5. Tighter Grid */
-        .grid { gap: 2rem; margin-top: 1rem; }
-        h4 { font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1.5px; color: #777; }
+        /* 4. Section Spacing */
+        section#content h2 { margin-bottom: 1.5rem; }
+        .grid { gap: 3rem; margin-top: 3rem; } /* Increased gap between interest columns */
+
+        h4 { font-size: 0.9rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #777; }
         ul { font-size: 0.9rem; padding-left: 1.2rem; margin-top: 0;}
-        li { margin-bottom: 0.25rem; }
+        li { margin-bottom: 0.4rem; }
 
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 1rem;}
@@ -86,21 +84,21 @@
         </div>
 
         <section id="content">
-            <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem; margin-top: 0;">Clinical & Research Focus</h2>
-            <p style="font-size: 0.95rem; color: #333; margin-bottom: 0.5rem;">I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service </strong>at Parkland Hospital</p>
+            <h2 style="font-size: 1.4rem; margin-top: 0;">Clinical & Research Focus</h2>
+            <p style="font-size: 0.95rem; color: #333;">I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
             
             <article>
                 <h3>Dissertation Project</h3>
                 <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <small>Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock, PhD, MSCS </small></p>
+                <small>Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock, PhD, MSCS</small></p>
             </article>
 
             <div class="grid">
                 <div>
                     <h4>Primary Interests</h4>
                     <ul>
-                        <li>Consult-Liaison Psychology (and in-patient behvioural health)</li>
-                        <li>Trauma (inclduing PTSD) & Veteran Health and Well-being</li>
+                        <li>Consult-Liaison Psychology (and in-patient behavioral health)</li>
+                        <li>Trauma (including PTSD) & Veteran Health and Well-being</li>
                     </ul>
                 </div>
                 <div>
