@@ -1,116 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jack R. Kaufman | UTSW</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <style>
-        /* 1. Global container */
-        body { 
-            max-width: 850px; 
-            margin: auto; 
-            padding: 2rem 1.5rem; 
-            background-color: #ffffff; 
-            color: #1a1a1a;
-            line-height: 1.5;
-        }
+<style>
+    /* 1. Global container & Contrast Fix */
+    body { 
+        max-width: 850px; 
+        margin: auto; 
+        padding: 2rem 1.5rem; 
+        background-color: #ffffff; 
+        /* Darkened from #1a1a1a to pure black for mobile contrast */
+        color: #000000; 
+        line-height: 1.6;
+        /* Increased base weight from 400 to 450 for better mobile rendering */
+        font-weight: 450; 
+    }
 
-        /* 2. Hero Section */
-        .hero { 
-            display: grid; 
-            grid-template-columns: 1.2fr 0.8fr; 
-            align-items: center; 
-            gap: 1.5rem; 
-            margin-bottom: 3.5rem; /* Increased spacing after hero */
-        }
+    /* 2. Hero Section */
+    .hero { 
+        display: grid; 
+        grid-template-columns: 1.2fr 0.8fr; 
+        align-items: center; 
+        gap: 1.5rem; 
+        margin-bottom: 3.5rem; 
+    }
 
-        .profile-image {
-            width: 100%;
-            max-width: 260px;
-            -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
-            mask-image: linear-gradient(to right, black 70%, transparent 100%);
-            filter: contrast(1.05);
-        }
+    .profile-image {
+        width: 100%;
+        max-width: 260px;
+        -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+        mask-image: linear-gradient(to right, black 70%, transparent 100%);
+        filter: contrast(1.1); /* Slightly higher contrast for mobile */
+    }
 
-        h1 { font-size: 2.5rem; margin-bottom: 0.25rem; border: none; }
-        .subtitle { font-size: 1.1rem; color: #444; margin-bottom: 1rem; }
+    h1 { font-size: 2.5rem; margin-bottom: 0.25rem; border: none; color: #000; font-weight: 800; }
+    
+    /* Darkened subtitle for better legibility */
+    .subtitle { font-size: 1.1rem; color: #222; margin-bottom: 1rem; font-weight: 500; }
 
-        /* 3. PADDY DISSERTATION SECTION */
-        article { 
-            margin: 3rem 0; /* Increased top/bottom margin for more "paddy" separation */
-            padding: 2rem; /* Increased internal padding for a roomier feel */
-            border: none; 
-            background: #fdfdfd; 
-            border-left: 5px solid #005596; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-        }
-        article h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #005596; }
-        article p { font-size: 0.95rem; margin: 0; }
+    /* 3. Dissertation Section */
+    article { 
+        margin: 3rem 0;
+        padding: 2rem;
+        border: none; 
+        background: #f9f9f9; 
+        border-left: 6px solid #005596; /* Slightly thicker for visual weight */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    }
+    article h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #005596; font-weight: 700; }
+    article p { font-size: 1rem; margin: 0; color: #111; }
 
-        /* 4. Section Spacing */
-        section#content h2 { margin-bottom: 1.5rem; }
-        .grid { gap: 3rem; margin-top: 3rem; } /* Increased gap between interest columns */
+    /* 4. Grid & Typography Cleanup */
+    .grid { gap: 3rem; margin-top: 3rem; }
+    
+    /* Darkened and bolded headers */
+    h4 { font-size: 0.9rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #444; font-weight: 700; }
+    ul { font-size: 1rem; padding-left: 1.2rem; margin-top: 0;}
+    li { margin-bottom: 0.5rem; color: #111; }
 
-        h4 { font-size: 0.9rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #777; }
-        ul { font-size: 0.9rem; padding-left: 1.2rem; margin-top: 0;}
-        li { margin-bottom: 0.4rem; }
-
-        @media (max-width: 768px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 1rem;}
-            .profile-image { margin: 0 auto; max-width: 200px; }
-        }
-    </style>
-</head>
-<body>
-
-    <main>
-        <div class="hero">
-            <div>
-                <h1>Jack R. Kaufman</h1>
-                <p class="subtitle">
-                    <strong>Doctoral Candidate, Clinical Psychology</strong><br>
-                    UT Southwestern Medical Center
-                </p>
-                <div>
-                    <a href="cv.pdf" role="button" class="outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View CV</a>
-                    <a href="mailto:jackryankaufman@gmail.com" style="margin-left: 15px; font-size: 0.85rem; font-weight: 600;">Email</a>
-                </div>
-            </div>
-            
-            <div class="profile-container">
-                <img src="headshot.jpg" alt="Jack R. Kaufman" class="profile-image">
-            </div>
-        </div>
-
-        <section id="content">
-            <h2 style="font-size: 1.4rem; margin-top: 0;">Clinical & Research Focus</h2>
-            <p style="font-size: 0.95rem; color: #333;">I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
-            
-            <article>
-                <h3>Dissertation Project</h3>
-                <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <small>Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock, PhD, MSCS</small></p>
-            </article>
-
-            <div class="grid">
-                <div>
-                    <h4>Primary Interests</h4>
-                    <ul>
-                        <li>Consult-Liaison Psychology (and in-patient behavioral health)</li>
-                        <li>Trauma (including PTSD) & Veteran Health and Well-being</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Collaborators</h4>
-                    <ul>
-                        <li>ASPIRE Lab (Stony Brook)</li>
-                        <li>MACA Lab (Aging & Cognition)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-</body>
-</html>
+    /* Mobile-Specific Tweaks */
+    @media (max-width: 768px) {
+        body { padding: 1.5rem 1rem; }
+        .hero { grid-template-columns: 1fr; text-align: center; margin-bottom: 2rem; }
+        .profile-image { margin: 0 auto; max-width: 220px; -webkit-mask-image: none; mask-image: none; } /* Removed fade on mobile for clarity */
+        h1 { font-size: 2.2rem; }
+    }
+</style>
