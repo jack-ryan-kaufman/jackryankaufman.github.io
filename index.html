@@ -14,6 +14,13 @@
             color: #1a1a1a; 
             line-height: 1.5;
             font-weight: 450;
+            /* Floating Ensō background */
+            background-image: url('enso.png'); 
+            background-repeat: no-repeat;
+            /* Anchored to the right side, slightly lowered from the top */
+            background-position: 85% 180px; 
+            background-size: 700px; 
+            background-attachment: fixed;
         }
 
         main {
@@ -22,15 +29,14 @@
             display: grid;
             grid-template-columns: 1fr 1.4fr; 
             gap: 2rem;
-            align-items: end;
-            min-height: 100vh;
+            align-items: start; /* FIXED: Pulls everything to the top */
+            padding-top: 4rem; /* Controls the very top margin */
         }
 
-        /* 1. Left Column: Baseline-aligned Headshot */
+        /* 1. Left Column: Floating Headshot */
         .profile-column {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
             padding: 0 2rem;
         }
 
@@ -39,13 +45,13 @@
             max-width: 480px;
             height: auto;
             display: block;
-            /* Anchors your shoulders to the bottom line */
             filter: drop-shadow(0 15px 40px rgba(0,0,0,0.06));
+            margin-bottom: 2rem;
         }
 
         .name-plate {
-            padding: 2.5rem 0;
-            border-top: 1px solid #eee; /* Creates the baseline */
+            padding-top: 2rem;
+            border-top: 1px solid #eee; /* This is your horizontal baseline */
         }
 
         h1 { font-size: 3.2rem; margin: 0; font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1;}
@@ -64,15 +70,9 @@
             display: inline-block;
         }
 
-        /* 2. Right Column: The Ensō Stage */
+        /* 2. Right Column Content */
         .content-column { 
-            position: relative;
-            padding: 4rem 4rem 6rem 2rem;
-            /* Moved the Ensō here to control it relative to this text only */
-            background-image: url('enso.png'); 
-            background-repeat: no-repeat;
-            background-position: center 55%; /* Vertically centers circle relative to text */
-            background-size: 750px; 
+            padding: 0 4rem 6rem 2rem;
         }
         
         .section-header { 
@@ -82,16 +82,17 @@
             letter-spacing: 1px; 
             margin-bottom: 3rem;
             font-weight: 800;
+            color: #1a1a1a;
         }
 
-        /* The 'Card' effect for Dissertation */
+        /* Semi-transparent card to allow Ensō to peek through */
         .dissertation-card { 
-            background: rgba(255, 255, 255, 0.92); /* Slight transparency to see enso under */
+            background: rgba(255, 255, 255, 0.85); 
             padding: 2.5rem;
             border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
             margin: 2rem 0;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(8px);
             max-width: 550px;
         }
 
@@ -117,12 +118,13 @@
             letter-spacing: 1px;
         }
 
-        /* Mobile */
+        /* Mobile Adjustments */
         @media (max-width: 1024px) {
-            main { grid-template-columns: 1fr; }
-            .content-column { background-size: 500px; padding: 2rem; background-position: center; }
-            .profile-image { max-width: 350px; margin: auto; }
+            body { background-size: 450px; background-position: center 100px; }
+            main { grid-template-columns: 1fr; padding-top: 2rem; }
+            .profile-image { max-width: 320px; margin: 0 auto 1.5rem auto; }
             .profile-column { text-align: center; }
+            .content-column { padding: 2rem; }
             .name-plate { border-top: none; }
         }
     </style>
@@ -167,8 +169,8 @@
             </div>
             
             <div style="margin-top: 3rem;">
-                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #334155;">Trauma & Veteran Health</p>
-                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #334155;">Integrative Collaborative Care</p>
+                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #2d3748;">Trauma & Veteran Health</p>
+                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #2d3748;">Integrative Collaborative Care</p>
             </div>
 
             <div class="footer-links">
