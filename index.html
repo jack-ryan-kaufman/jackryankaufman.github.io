@@ -17,8 +17,7 @@
             /* Floating Ensō background */
             background-image: url('enso.png'); 
             background-repeat: no-repeat;
-            /* Anchored to the right side, slightly lowered from the top */
-            background-position: 85% 180px; 
+            background-position: 85% 150px; 
             background-size: 700px; 
             background-attachment: fixed;
         }
@@ -29,8 +28,8 @@
             display: grid;
             grid-template-columns: 1fr 1.4fr; 
             gap: 2rem;
-            align-items: start; /* FIXED: Pulls everything to the top */
-            padding-top: 4rem; /* Controls the very top margin */
+            align-items: start;
+            padding-top: 4rem;
         }
 
         /* 1. Left Column: Floating Headshot */
@@ -51,7 +50,7 @@
 
         .name-plate {
             padding-top: 2rem;
-            border-top: 1px solid #eee; /* This is your horizontal baseline */
+            border-top: 1px solid #eee;
         }
 
         h1 { font-size: 3.2rem; margin: 0; font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1;}
@@ -74,46 +73,43 @@
         .content-column { 
             padding: 0 4rem 6rem 2rem;
         }
-        
-        .section-header { 
-            font-size: 1.8rem; 
-            line-height: 1.1; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            margin-bottom: 3rem;
-            font-weight: 800;
-            color: #1a1a1a;
-        }
 
-        /* Semi-transparent card to allow Ensō to peek through */
+        .intro-text {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        /* Tightened Dissertation Card */
         .dissertation-card { 
             background: rgba(255, 255, 255, 0.85); 
-            padding: 2.5rem;
+            padding: 1.5rem 2rem; /* Reduced margins */
             border-radius: 8px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-            margin: 2rem 0;
+            margin: 1rem 0 2.5rem 0;
             backdrop-filter: blur(8px);
             max-width: 550px;
         }
 
-        .dissertation-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .dissertation-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; }
+        .dissertation-card p { margin: 0; line-height: 1.4; }
 
         .research-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
             max-width: 700px;
         }
 
-        .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .research-grid p { font-size: 0.9rem; color: #555; margin: 0; line-height: 1.4; }
+        .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;}
+        .research-grid p { font-size: 0.95rem; color: #444; margin: 0; line-height: 1.5; }
 
         .footer-links {
-            margin-top: 4rem;
+            margin-top: 5rem;
             font-size: 0.85rem;
             font-weight: 700;
-            color: #999;
+            color: #aaa;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -145,32 +141,32 @@
         </div>
 
         <div class="content-column">
-            <div class="section-header">
-                Clinical Psychology &<br>Consult-Liaison Service
-            </div>
-            
-            <p style="max-width: 600px;">I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
+            <p class="intro-text">
+                I am a clinical psychology doctoral candidate at <strong>UT Southwestern</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.
+            </p>
             
             <div class="dissertation-card">
                 <h3>Dissertation Project</h3>
                 <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <span style="color:#666; font-size: 0.9rem;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
+                <span style="color:#666; font-size: 0.85rem;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
             </div>
 
             <div class="research-grid">
                 <div>
-                    <h4>Neuromodulation Outcomes</h4>
-                    <p>Focusing on the intersection of interventional psychiatry and functional outcomes.</p>
+                    <h4>Primary Interests</h4>
+                    <p>
+                        Trauma & Veteran Health<br>
+                        Integrative Collaborative Care<br>
+                        Neuromodulation Outcomes
+                    </p>
                 </div>
                 <div>
                     <h4>Collaborators</h4>
-                    <p>ASPIRE Lab (Stony Brook)<br>MACA Lab (Aging & Cognition)</p>
+                    <p>
+                        ASPIRE Lab (Stony Brook)<br>
+                        MACA Lab (Aging & Cognition)
+                    </p>
                 </div>
-            </div>
-            
-            <div style="margin-top: 3rem;">
-                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #2d3748;">Trauma & Veteran Health</p>
-                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #2d3748;">Integrative Collaborative Care</p>
             </div>
 
             <div class="footer-links">
