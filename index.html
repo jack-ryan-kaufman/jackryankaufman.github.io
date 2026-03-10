@@ -45,11 +45,11 @@
             height: auto;
             display: block;
             filter: drop-shadow(0 15px 40px rgba(0,0,0,0.06));
-            margin-bottom: 0.5rem; /* Reduced to bring name closer to shoulders */
+            margin-bottom: 0.5rem; /* Tightened to bring name under shoulders */
         }
 
         .name-plate {
-            padding-top: 1rem; /* Tightened line under shoulders */
+            padding-top: 1rem;
             border-top: 1px solid #eee;
         }
 
@@ -114,13 +114,12 @@
 
         .research-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Single column for better text flow on detailed labels */
+            grid-template-columns: 1fr;
             gap: 2.5rem;
             margin-top: 2rem;
             max-width: 800px;
         }
 
-        /* Re-enabling two columns for desktop width if content isn't too crowded */
         @media (min-width: 1200px) {
             .research-grid { grid-template-columns: 1fr 1fr; }
         }
@@ -137,7 +136,7 @@
             list-style: none !important;
             font-size: 0.95rem;
             color: #222;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
             position: relative;
             padding-left: 1.2rem;
             line-height: 1.4;
@@ -151,8 +150,9 @@
             font-weight: bold;
         }
 
+        /* Footer with reduced top margin */
         .footer-branding {
-            margin: 6rem auto 4rem auto;
+            margin: 3rem auto 4rem auto; /* Reduced top margin from 6rem to 3rem */
             font-size: 1.1rem; 
             font-weight: 700;
             color: #999;
@@ -170,7 +170,7 @@
             .action-buttons { justify-content: center; }
             .content-column { padding: 2rem; }
             .name-plate { border-top: none; }
-            .footer-branding { letter-spacing: 4px; font-size: 0.9rem; }
+            .footer-branding { letter-spacing: 4px; font-size: 0.9rem; margin-top: 2rem; }
         }
     </style>
 </head>
