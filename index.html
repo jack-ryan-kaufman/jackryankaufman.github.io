@@ -7,26 +7,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
         body { 
-            max-width: 100%; margin: 0; padding: 0; background-color: #ffffff; color: #000; line-height: 1.6;
+            max-width: 100%; margin: 0; padding: 0; background-color: #fff; color: #000; line-height: 1.6;
             background-image: url('enso_transparent.png'); background-repeat: no-repeat;
             background-position: calc(100% - 20px) 150px; background-size: 550px; background-attachment: fixed;
-            font-weight: 450;
         }
         main { max-width: 1100px; margin: auto; padding: 4rem 1.5rem; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
         .profile-column { display: flex; flex-direction: column; align-items: center; text-align: center; position: sticky; top: 4rem; }
         
-        /* The Circle Crop styling */
         .profile-image { 
             width: 280px; height: 280px; object-fit: cover; border-radius: 50%; 
             border: 6px solid #f9f9f9; box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            margin-bottom: 1.5rem; background-color: #fff; 
+            margin-bottom: 1.5rem; 
         }
 
         h1 { font-size: 2.8rem; margin: 0; font-weight: 800; border: none; letter-spacing: -1px; }
         .subtitle { font-size: 1.15rem; color: #444; margin-bottom: 1.5rem; }
         .cv-link { text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; font-weight: 700; color: #fff; background-color: #000; padding: 0.8rem 2.5rem; border-radius: 4px; text-decoration: none; display: inline-block; }
-        .dissertation-box { margin: 2.5rem 0; padding: 2rem; background: rgba(253, 253, 253, 0.9); border-left: 6px solid #005596; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-
+        
         @media (max-width: 900px) {
             main { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1rem; }
             .profile-column { position: relative; top: 0; }
@@ -36,4 +33,21 @@
 <body>
     <main>
         <div class="profile-column">
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAAECBAUGBwj/xABCEAACAQIEAgYGBwcDBQEAAAABAgADEQQSITEFQRMiUWFxgQYUkaGx0QcjMsHR4fAVQlJicpLxM4KiFkNTVKPCJP/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACMRAAICAgMAAgMBAAAAAAAAAAABAhEDIRIxBEETIjJRYXH/2gAMAwEAAhEDEQA/APL8s9p7P6D8Pp8N9HMDSVbPUpirU7SzC5/LwniqrmYKupJsBPrHC0vV8JRpfwU1X3CcGWWqNoIDU98pP8AefAnL2uYvXF9/gIDD9Y9v6mH6xtvjG4BfR4X8QY7r/mIidYy9Kq90fN2HhAFY9s/mIjL2H4xvXF9/hLNoH6vY3jG9cXvHhAFY2z7xD3SeT2jX7zAMY277xA8ntMfm7oHre07YmD9Y20jDGPz7YmD9ZPaPfG9ZO2EYY++MffK717C94vW/zEADGZ7O2Jgz74XrfbiD9YHbGAbO38Xwi9Z75XatpA+s+G3fLpizS6ye0/COKnt98zeuL2DwhEreHwi4MvmbWfvHxi6ye+ZfTnt98n0vh8YOLCZo9L3mMe73zO6TwMe6LiyuepUfW8UvXfXyHxn07jqnR4KtUH9NJm9wnzHwy+Y5iNRt8Z9Hcc/7LxZ/9D/KThkvpXp05u0fOnpL6WcVxuLxC0674fDAlaVOk2Xq8iTzJlP0e4xjeG8ToOa9WpRZgtSmzZgVJ5X5iXsfwZ3XpKVrG91I0FvC5mOOH4zDYynVqUMiK6G5YAWuBfXwnX+ODjSOfnK9nuOdv8XhH6yefwjX74p4J2BfR5+Iicv6mIr3fCJy/qZAF+74RWu+ER74vW74C9X9REbe+EXreI8Ir3fCJ9/jC16/qYisYx74j3++RWMY/eIr3++I9/vhGf+74mNf+74mIr7ox+8RCH7vjGv8A3fExFf7vjEIs/wDeIn93xiKP/d4xBf7vGYA/u+JkD9/xMj0X
+            <img src="headshot.png" alt="Jack R. Kaufman" class="profile-image">
+            <div>
+                <h1>Jack R. Kaufman</h1>
+                <p class="subtitle"><strong>Doctoral Candidate, Clinical Psychology</strong><br>UT Southwestern Medical Center</p>
+                <a href="cv.pdf" class="cv-link">View CV</a>
+            </div>
+        </div>
+        <div class="content-column">
+            <h2>Clinical & Research Focus</h2>
+            <p>Clinical psychology doctoral candidate at <strong>UTSW</strong>, currently on the <strong>Consult-Liaison Service</strong> at Parkland Hospital.</p>
+            <div style="margin: 2rem 0; padding: 2rem; border-left: 6px solid #005596; background: #fdfdfd;">
+                <h3 style="font-size: 1.25rem;">Dissertation Project</h3>
+                <p>Carepartners in Electroconvulsive Therapy (ECT).</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
