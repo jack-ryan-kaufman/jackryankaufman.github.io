@@ -17,7 +17,8 @@
             /* Floating Ensō background */
             background-image: url('enso.png'); 
             background-repeat: no-repeat;
-            background-position: 85% 150px; 
+            /* Moved up from 150px to 110px */
+            background-position: 85% 110px; 
             background-size: 700px; 
             background-attachment: fixed;
         }
@@ -60,12 +61,11 @@
             letter-spacing: -1.5px; 
             text-transform: uppercase; 
             line-height: 1;
-            color: #000 !important; /* Force black for name */
+            color: #000 !important; /* Preserving high-contrast black */
         }
 
         .subtitle { font-size: 1.1rem; color: #555; margin: 1rem 0 1.5rem 0; }
 
-        /* Button Container */
         .action-buttons {
             display: flex;
             gap: 10px;
@@ -89,7 +89,7 @@
 
         /* 2. Right Column Content */
         .content-column { 
-            padding: 0 4rem 6rem 2rem;
+            padding: 0 4rem 2rem 2rem;
         }
 
         .intro-text {
@@ -98,12 +98,11 @@
             margin-bottom: 2rem;
         }
         
-        /* Dissertation Card with Subtle Border */
         .dissertation-card { 
             background: rgba(255, 255, 255, 0.85); 
             padding: 1.5rem 2rem;
             border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border added */
+            border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
             box-shadow: 0 10px 40px rgba(0,0,0,0.03);
             margin: 1rem 0 2.5rem 0;
             backdrop-filter: blur(8px);
@@ -124,25 +123,29 @@
         .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;}
         .research-grid p { font-size: 0.95rem; color: #444; margin: 0; line-height: 1.5; }
 
+        /* Centered institutional branding */
         .footer-branding {
-            margin-top: 5rem;
-            font-size: 0.85rem;
+            margin: 6rem auto 4rem auto;
+            font-size: 1.1rem; /* Slightly bigger */
             font-weight: 700;
-            color: #aaa;
+            color: #bbb;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 6px; /* Looser spacing */
+            text-align: center;
+            width: 100%;
         }
 
         /* Mobile Adjustments */
         @media (max-width: 1024px) {
-            body { background-size: 450px; background-position: center 100px; }
+            body { background-size: 450px; background-position: center 80px; }
             main { grid-template-columns: 1fr; padding-top: 2rem; }
             .profile-image { max-width: 320px; margin: 0 auto 1.5rem auto; }
             .profile-column { text-align: center; }
             .action-buttons { justify-content: center; }
             .content-column { padding: 2rem; }
             .name-plate { border-top: none; }
-            h1 { color: #000 !important; } /* Ensure mobile black */
+            h1 { color: #000 !important; }
+            .footer-branding { letter-spacing: 4px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -192,12 +195,12 @@
                     </p>
                 </div>
             </div>
-
-            <div class="footer-branding">
-                UTSW &nbsp;|&nbsp; PARKLAND
-            </div>
         </div>
     </main>
+
+    <div class="footer-branding">
+        UTSW &nbsp;|&nbsp; PARKLAND
+    </div>
 
 </body>
 </html>
