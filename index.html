@@ -3,107 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jack R. Kaufman | UTSW</title>
+    <title>Jack R. Kaufman | UTSW Clinical Psychology</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    
     <style>
-        body { 
-            max-width: 100%; 
-            margin: 0; 
+        :root {
+            --primary-blue: #005596;
+            --text-main: #1a1a1a;
+            --text-muted: #666;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            margin: 0;
             padding: 0;
-            background-color: #ffffff; 
-            color: #000; 
-            line-height: 1.6;
-            /* Ensō Background - Fixed so it doesn't move when you scroll */
-            background-image: url('enso_transparent.png'); 
-            background-repeat: no-no-repeat;
-            background-position: calc(100% - 20px) 150px; 
-            background-size: 550px; 
-            background-attachment: fixed;
-            font-weight: 450;
+            background-color: #ffffff;
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.4;
         }
 
+        /* --- Header & Nav Section --- */
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .header-left p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .location {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links a {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--text-muted);
+            padding: 0.4rem 0.8rem;
+            background: #f4f4f4;
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #eee;
+            color: #000;
+        }
+
+        /* --- Main Layout --- */
         main {
-            max-width: 1100px;
-            margin: auto;
-            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1.5fr; 
-            gap: 4rem;
-            align-items: start;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 0;
+            align-items: end;
+            min-height: 60vh;
         }
 
-        .profile-column {
+        /* Left Column: Headshot sitting on the line */
+        .profile-container {
+            border-bottom: 2px solid #eeeeee;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            display: block;
+            /* Ensures your transparent headshot sits flush on the border */
+            margin-bottom: -2px; 
+        }
+
+        /* Right Column: Text inside the Ensō */
+        .content-container {
+            padding: 0 4rem 4rem 4rem;
+            background-image: url('enso_transparent.png');
+            background-repeat: no-repeat;
+            background-position: center left;
+            background-size: 600px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: sticky;
-            top: 4rem;
+            justify-content: center;
         }
 
-        /* This uses the transparent image you're about to download */
-        .profile-image {
-            width: 280px;
-            height: 280px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 6px solid #f9f9f9;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            margin-bottom: 1.5rem;
-            background-color: #fff; /* Ensures a clean white base behind you */
-        }
-
-        h1 { font-size: 2.8rem; margin: 0; font-weight: 800; border: none; letter-spacing: -1px;}
-        .subtitle { font-size: 1.15rem; color: #444; margin-bottom: 1.5rem; }
-
-        .cv-link {
+        .service-title {
+            font-weight: 800;
+            font-size: 1.6rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #fff;
-            background-color: #000;
-            padding: 0.8rem 2.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
         }
 
-        .content-column h2 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; font-weight: 800; }
-        .dissertation-box { margin: 2.5rem 0; padding: 2rem; background: rgba(253, 253, 253, 0.9); border-left: 6px solid #005596; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .research-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
 
+        .research-item h4 {
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .research-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #444;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            border: 1.5px solid var(--primary-blue);
+            padding: 2px 4px;
+            border-radius: 3px;
+            line-height: 1;
+            margin-top: 4px;
+        }
+
+        /* --- Footer Section --- */
+        footer {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .logos img {
+            height: 30px;
+            filter: grayscale(100%);
+        }
+
+        .email {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 900px) {
-            main { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1rem; }
-            .profile-column { position: relative; top: 0; }
-            body { background-size: 300px; background-position: center bottom; background-attachment: scroll; }
+            main { grid-template-columns: 1fr; }
+            .content-container { 
+                background-size: 400px; 
+                padding: 2rem;
+                background-position: center;
+            }
+            .profile-container { justify-content: center; }
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <div class="header-left">
+            <h1>Jack R. Kaufman</h1>
+            <p>Doctoral Candidate in Clinical Psychology | UT Southwestern Medical Center</p>
+        </div>
+        <div class="location">
+            <span>📍 Dallas, TX</span>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="cv.pdf">CV</a>
+            <a href="#research">RESEARCH</a>
+            <a href="mailto:email@jackrkaufman.com">CONTACT</a>
+        </div>
+    </nav>
+
     <main>
-        <div class="profile-column">
+        <div class="profile-container">
             <img src="headshot.png" alt="Jack R. Kaufman" class="profile-image">
-            <div>
-                <h1>Jack R. Kaufman</h1>
-                <p class="subtitle"><strong>Doctoral Candidate, Clinical Psychology</strong><br>UT Southwestern Medical Center</p>
-                <a href="cv.pdf" class="cv-link">View CV</a>
-            </div>
         </div>
 
-        <div class="content-column">
-            <h2>Clinical & Research Focus</h2>
-            <p>I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
-            <div class="dissertation-box">
-                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #005596;">Dissertation Project</h3>
-                <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <small>IPRP | Advisor: Dr. Shawn McClintock, PhD, MSCS</small></p>
+        <div class="content-container">
+            <div class="service-title">
+                Clinical Psychology &<br>Consult-Liaison Service
             </div>
-            <div class="grid-info">
-                <div><h4>Primary Interests</h4><p>Consult-Liaison Psychology<br>In-patient Behavioral Health<br>Trauma & Veteran Well-being</p></div>
-                <div><h4>Collaborators</h4><p>ASPIRE Lab (Stony Brook)<br>MACA Lab (Aging & Cognition)</p></div>
+
+            <div class="research-item">
+                <span class="tag">🧠</span>
+                <div>
+                    <h4>Neuromodulation Outcomes Research</h4>
+                    <p>IPRP, Dr. Shawn McClintock</p>
+                </div>
+            </div>
+
+            <div class="research-item">
+                <span class="tag">ECT</span>
+                <div>
+                    <h4>Dissertation: Carepartners in ECT</h4>
+                    <p>Functional & Health Outcomes, <a href="#" style="font-size: 0.8rem;">abstract</a></p>
+                </div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <h4 style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Trauma & Veteran Health</h4>
+                <h4 style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Integrative Collaborative Care</h4>
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="logos">
+            <strong>UTSW</strong>
+            <span style="color:#ccc">|</span>
+            <strong>Parkland</strong>
+        </div>
+        <div class="email">
+            email@jackrkaufman.com
+        </div>
+    </footer>
+
 </body>
 </html>
