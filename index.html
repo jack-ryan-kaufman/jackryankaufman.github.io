@@ -6,154 +6,132 @@
     <title>Jack R. Kaufman | UTSW</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        /* 1. Reset and Background Structure (ENSO CIRCLE) */
         body { 
-            max-width: 100%; 
+            background-color: #fff; 
+            color: #000; 
             margin: 0; 
             padding: 0;
-            background-color: #ffffff; 
-            color: #000; 
-            line-height: 1.6;
-            /* Integrating the Ensō watermark as a fixed background */
-            background-image: url('enso.png'); 
-            background-repeat: no-repeat;
-            background-position: calc(100% - 80px) 160px; /* Aligns with the mockup */
-            background-size: 550px; 
-            background-attachment: fixed;
-            font-weight: 450;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* The Enso structure - Light and Subtle */
+        .enso-bg {
+            position: fixed;
+            top: 10%;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            border: 20px solid #f2f2f2; /* This creates a 'fake' enso if you don't have the PNG */
+            border-radius: 50%;
+            border-left-color: transparent;
+            transform: rotate(-45deg);
+            z-index: -1;
+            opacity: 0.5;
         }
 
         main {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: auto;
-            padding: 2.5rem 1.5rem;
+            padding: 4rem 2rem;
             display: grid;
-            grid-template-columns: 1fr 1.5fr; /* 2-column layout from mockup */
+            grid-template-columns: 1fr 1.5fr;
             gap: 4rem;
-            align-items: center;
-            min-height: 80vh;
+            align-items: start;
         }
 
-        /* 2. Left Column: Headshot and Bio */
-        .profile-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
+        .profile-side { text-align: center; position: sticky; top: 4rem; }
+        
         .profile-image {
-            width: 100%;
-            max-width: 320px; /* Slightly larger for presence */
-            border-radius: 50%; /* Modern circle shape */
-            border: 6px solid #f9f9f9; /* Soft bezel from mockup */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Premium depth shadow */
-            filter: contrast(1.05);
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid #f9f9f9;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-bottom: 1.5rem;
         }
 
-        h1 { font-size: 2.8rem; margin: 0; color: #000; font-weight: 800; border: none;}
-        .subtitle { font-size: 1.15rem; color: #111; margin-bottom: 1.5rem; }
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -1px; }
+        .tagline { font-size: 1.1rem; color: #555; margin-bottom: 2rem; }
 
-        /* CV Button styling from mockup */
-        .cv-link {
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.9rem;
-            font-weight: 700;
+        .btn-cv {
+            background: #000;
             color: #fff;
-            background-color: #000;
-            padding: 0.75rem 2.5rem;
-            border-radius: 5px;
+            padding: 0.8rem 2.5rem;
             text-decoration: none;
-            display: inline-block;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
         }
-        .cv-link:hover { opacity: 0.8; }
 
-        /* 3. Right Column: Structured Content */
-        .content-column { padding-top: 1rem;}
+        /* Content Right Side */
+        .content-side h2 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; }
+        .section-box { margin-bottom: 3rem; }
         
-        /* 'CL PSYCHOLOGY' header from mockup */
-        .content-column > h2 { 
-            font-size: 1.6rem; 
-            margin: 0; 
-            line-height: 1.1; 
-            text-transform: uppercase; 
-            letter-spacing: 1.5px; 
-            margin-bottom: 2rem;
-            font-weight: 800;
+        .dissertation {
+            background: #fdfdfd;
+            border-left: 5px solid #005596;
+            padding: 2rem;
+            margin: 2rem 0;
         }
 
-        /* Content block styling (No border) */
-        article { 
-            margin: 1.5rem 0;
-            padding: 0;
-            border: none; 
-            background: transparent; 
-            box-shadow: none;
-        }
-        article h3 { font-size: 1.3rem; margin-bottom: 0.25rem; color: #111; font-weight: 700; }
-        article p { font-size: 1rem; margin: 0; color: #222; margin-top: 0.25rem;}
+        .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        h4 { font-size: 0.9rem; text-transform: uppercase; color: #999; margin-bottom: 1rem; }
+        ul { list-style: none; padding: 0; font-size: 0.95rem; }
+        li { margin-bottom: 0.5rem; }
 
-        /* Grid for Interests from mockup */
-        .content-column .grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .content-column .grid h4 { font-size: 1.1rem; text-transform: none; letter-spacing: 0; color: #000; font-weight: 700; margin-bottom: 0.5rem;}
-        .content-column .grid p { font-size: 0.9rem; color: #333; margin: 0;}
-
-        /* Mobile Tweaks */
-        @media (max-width: 1024px) {
-            body { background-size: 400px; background-position: center 300px; }
-            main { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-            .content-column .grid { grid-template-columns: 1fr; gap: 1rem; }
-            .profile-image { max-width: 260px; }
-            h1 { font-size: 2.2rem; }
+        @media (max-width: 800px) {
+            main { grid-template-columns: 1fr; padding: 2rem 1rem; }
+            .profile-side { position: relative; top: 0; margin-bottom: 3rem; }
+            .enso-bg { width: 300px; height: 300px; right: -50px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="enso-bg"></div>
+
     <main>
-        <div class="profile-column">
+        <section class="profile-side">
             <img src="headshot.png" alt="Jack R. Kaufman" class="profile-image">
-            <div>
-                <h1>Jack R. Kaufman</h1>
-                <p class="subtitle">
-                    <strong>Doctoral Candidate in Clinical Psychology</strong><br>
-                    UT Southwestern Medical Center
-                </p>
-                <a href="cv.pdf" class="cv-link">CV</a>
+            <h1>Jack R. Kaufman</h1>
+            <p class="tagline">Doctoral Candidate, Clinical Psychology<br><strong>UT Southwestern Medical Center</strong></p>
+            <a href="cv.pdf" class="btn-cv">View CV</a>
+        </section>
+
+        <section class="content-side">
+            <h2>Clinical & Research Focus</h2>
+            <p>I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently serving on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
+
+            <div class="dissertation">
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Dissertation Project</h3>
+                <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong></p>
+                <p style="font-size: 0.9rem; color: #666;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</p>
             </div>
-        </div>
 
-        <div class="content-column">
-            <h2>CLINICAL PSYCHOLOGY & CONSULT-LIAISON SERVICE</h2>
-            
-            <p>I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
-            
-            <article>
-                <h3>Dissertation Project</h3>
-                <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <small>Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock, PhD, MSCS</small></p>
-            </article>
-
-            <div class="grid">
+            <div class="grid-info">
                 <div>
-                    <h4>Neuromodulation Outcomes Research</h4>
-                    <p>Focusing on the intersection of interventional psychiatry and functional outcomes.</p>
+                    <h4>Primary Interests</h4>
+                    <ul>
+                        <li>Consult-Liaison Psychology</li>
+                        <li>In-patient Behavioral Health</li>
+                        <li>Trauma & Veteran Well-being</li>
+                    </ul>
                 </div>
                 <div>
-                    <h4>Collaborators & Affiliations</h4>
-                    <p>ASPIRE Lab (Stony Brook) | MACA Lab (Aging & Cognition)</p>
+                    <h4>Collaborators</h4>
+                    <ul>
+                        <li>ASPIRE Lab (Stony Brook)</li>
+                        <li>MACA Lab (Aging & Cognition)</li>
+                        <li>APA Division 38 Task Group</li>
+                    </ul>
                 </div>
             </div>
-            
-            <p style="text-transform: uppercase; font-weight: 800; font-size: 1.3rem; margin-top: 2rem;">TRAUMA & VETERAN HEALTH</p>
-            <p style="text-transform: uppercase; font-weight: 800; font-size: 1.3rem;">INTEGRATIVE COLLABORATIVE CARE</p>
-        </div>
+
+            <p style="font-weight: 800; letter-spacing: 1px; margin-top: 4rem; text-transform: uppercase; opacity: 0.3;">Trauma & Veteran Health</p>
+            <p style="font-weight: 800; letter-spacing: 1px; text-transform: uppercase; opacity: 0.3;">Integrative Collaborative Care</p>
+        </section>
     </main>
 
 </body>
