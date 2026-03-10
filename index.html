@@ -7,132 +7,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
         body { 
-            background-color: #fff; 
-            color: #000; 
-            margin: 0; 
-            padding: 0;
-            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 100%; margin: 0; padding: 0; background-color: #ffffff; color: #000; line-height: 1.6;
+            background-image: url('enso_transparent.png'); background-repeat: no-repeat;
+            background-position: calc(100% - 20px) 150px; background-size: 550px; background-attachment: fixed;
+            font-weight: 450;
         }
-
-        /* The Enso structure - Light and Subtle */
-        .enso-bg {
-            position: fixed;
-            top: 10%;
-            right: -100px;
-            width: 600px;
-            height: 600px;
-            border: 20px solid #f2f2f2; /* This creates a 'fake' enso if you don't have the PNG */
-            border-radius: 50%;
-            border-left-color: transparent;
-            transform: rotate(-45deg);
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .profile-side { text-align: center; position: sticky; top: 4rem; }
+        main { max-width: 1100px; margin: auto; padding: 4rem 1.5rem; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+        .profile-column { display: flex; flex-direction: column; align-items: center; text-align: center; position: sticky; top: 4rem; }
         
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 8px solid #f9f9f9;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 1.5rem;
+        /* The Circle Crop styling */
+        .profile-image { 
+            width: 280px; height: 280px; object-fit: cover; border-radius: 50%; 
+            border: 6px solid #f9f9f9; box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            margin-bottom: 1.5rem; background-color: #fff; 
         }
 
-        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -1px; }
-        .tagline { font-size: 1.1rem; color: #555; margin-bottom: 2rem; }
+        h1 { font-size: 2.8rem; margin: 0; font-weight: 800; border: none; letter-spacing: -1px; }
+        .subtitle { font-size: 1.15rem; color: #444; margin-bottom: 1.5rem; }
+        .cv-link { text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; font-weight: 700; color: #fff; background-color: #000; padding: 0.8rem 2.5rem; border-radius: 4px; text-decoration: none; display: inline-block; }
+        .dissertation-box { margin: 2.5rem 0; padding: 2rem; background: rgba(253, 253, 253, 0.9); border-left: 6px solid #005596; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
 
-        .btn-cv {
-            background: #000;
-            color: #fff;
-            padding: 0.8rem 2.5rem;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-        }
-
-        /* Content Right Side */
-        .content-side h2 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; }
-        .section-box { margin-bottom: 3rem; }
-        
-        .dissertation {
-            background: #fdfdfd;
-            border-left: 5px solid #005596;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
-        h4 { font-size: 0.9rem; text-transform: uppercase; color: #999; margin-bottom: 1rem; }
-        ul { list-style: none; padding: 0; font-size: 0.95rem; }
-        li { margin-bottom: 0.5rem; }
-
-        @media (max-width: 800px) {
-            main { grid-template-columns: 1fr; padding: 2rem 1rem; }
-            .profile-side { position: relative; top: 0; margin-bottom: 3rem; }
-            .enso-bg { width: 300px; height: 300px; right: -50px; }
+        @media (max-width: 900px) {
+            main { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1rem; }
+            .profile-column { position: relative; top: 0; }
         }
     </style>
 </head>
 <body>
-
-    <div class="enso-bg"></div>
-
     <main>
-        <section class="profile-side">
-            <img src="headshot.png" alt="Jack R. Kaufman" class="profile-image">
-            <h1>Jack R. Kaufman</h1>
-            <p class="tagline">Doctoral Candidate, Clinical Psychology<br><strong>UT Southwestern Medical Center</strong></p>
-            <a href="cv.pdf" class="btn-cv">View CV</a>
-        </section>
-
-        <section class="content-side">
-            <h2>Clinical & Research Focus</h2>
-            <p>I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently serving on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
-
-            <div class="dissertation">
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Dissertation Project</h3>
-                <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong></p>
-                <p style="font-size: 0.9rem; color: #666;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</p>
-            </div>
-
-            <div class="grid-info">
-                <div>
-                    <h4>Primary Interests</h4>
-                    <ul>
-                        <li>Consult-Liaison Psychology</li>
-                        <li>In-patient Behavioral Health</li>
-                        <li>Trauma & Veteran Well-being</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Collaborators</h4>
-                    <ul>
-                        <li>ASPIRE Lab (Stony Brook)</li>
-                        <li>MACA Lab (Aging & Cognition)</li>
-                        <li>APA Division 38 Task Group</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p style="font-weight: 800; letter-spacing: 1px; margin-top: 4rem; text-transform: uppercase; opacity: 0.3;">Trauma & Veteran Health</p>
-            <p style="font-weight: 800; letter-spacing: 1px; text-transform: uppercase; opacity: 0.3;">Integrative Collaborative Care</p>
-        </section>
-    </main>
-
-</body>
-</html>
+        <div class="profile-column">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAAECBAUGBwj/xABCEAACAQIEAgYGBwcDBQEAAAABAgADEQQSITEFQRMiUWFxgQYUkaGx0QcjMsHR4fAVQlJicpLxM4KiFkNTVKPCJP/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACMRAAICAgMAAgMBAAAAAAAAAAABAhEDIRIxBEETIjJRYXH/2gAMAwEAAhEDEQA/APL8s9p7P6D8Pp8N9HMDSVbPUpirU7SzC5/LwniqrmYKupJsBPrHC0vV8JRpfwU1X3CcGWWqNoIDU98pP8AefAnL2uYvXF9/gIDD9Y9v6mH6xtvjG4BfR4X8QY7r/mIidYy9Kq90fN2HhAFY9s/mIjL2H4xvXF9/hLNoH6vY3jG9cXvHhAFY2z7xD3SeT2jX7zAMY277xA8ntMfm7oHre07YmD9Y20jDGPz7YmD9ZPaPfG9ZO2EYY++MffK717C94vW/zEADGZ7O2Jgz74XrfbiD9YHbGAbO38Xwi9Z75XatpA+s+G3fLpizS6ye0/COKnt98zeuL2DwhEreHwi4MvmbWfvHxi6ye+ZfTnt98n0vh8YOLCZo9L3mMe73zO6TwMe6LiyuepUfW8UvXfXyHxn07jqnR4KtUH9NJm9wnzHwy+Y5iNRt8Z9Hcc/7LxZ/9D/KThkvpXp05u0fOnpL6WcVxuLxC0674fDAlaVOk2Xq8iTzJlP0e4xjeG8ToOa9WpRZgtSmzZgVJ5X5iXsfwZ3XpKVrG91I0FvC5mOOH4zDYynVqUMiK6G5YAWuBfXwnX+ODjSOfnK9nuOdv8XhH6yefwjX74p4J2BfR5+Iicv6mIr3fCJy/qZAF+74RWu+ER74vW74C9X9REbe+EXreI8Ir3fCJ9/jC16/qYisYx74j3++RWMY/eIr3++I9/vhGf+74mNf+74mIr7ox+8RCH7vjGv8A3fExFf7vjEIs/wDeIn93xiKP/d4xBf7vGYA/u+JkD9/xMj0X
