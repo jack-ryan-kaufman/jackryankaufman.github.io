@@ -32,7 +32,7 @@
             padding-top: 4rem;
         }
 
-        /* 1. Left Column: Floating Headshot */
+        /* 1. Left Column: Floating Headshot and Name */
         .profile-column {
             display: flex;
             flex-direction: column;
@@ -45,11 +45,11 @@
             height: auto;
             display: block;
             filter: drop-shadow(0 15px 40px rgba(0,0,0,0.06));
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem; /* Reduced to bring name closer to shoulders */
         }
 
         .name-plate {
-            padding-top: 2rem;
+            padding-top: 1rem; /* Tightened line under shoulders */
             border-top: 1px solid #eee;
         }
 
@@ -63,7 +63,7 @@
             color: #000 !important;
         }
 
-        .subtitle { font-size: 1.1rem; color: #222; margin: 1rem 0 1.5rem 0; }
+        .subtitle { font-size: 1.1rem; color: #222; margin: 0.75rem 0 1.5rem 0; line-height: 1.3; }
 
         .action-buttons {
             display: flex;
@@ -88,7 +88,7 @@
 
         /* 2. Right Column Content */
         .content-column { 
-            padding: 4.5rem 4rem 2rem 2rem; /* Added 4.5rem top padding to lower the text */
+            padding: 4.5rem 4rem 2rem 2rem;
         }
 
         .intro-text {
@@ -114,26 +114,30 @@
 
         .research-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr; /* Single column for better text flow on detailed labels */
             gap: 2.5rem;
             margin-top: 2rem;
-            max-width: 700px;
+            max-width: 800px;
+        }
+
+        /* Re-enabling two columns for desktop width if content isn't too crowded */
+        @media (min-width: 1200px) {
+            .research-grid { grid-template-columns: 1fr 1fr; }
         }
 
         .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #000;}
         
-        /* Bullet system Fix */
         .research-grid ul {
-            list-style: none !important; /* Force hide default bullets */
+            list-style: none !important;
             padding: 0 !important;
             margin: 0 !important;
         }
 
         .research-grid li {
-            list-style: none !important; /* Force hide default bullets */
+            list-style: none !important;
             font-size: 0.95rem;
             color: #222;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             position: relative;
             padding-left: 1.2rem;
             line-height: 1.4;
@@ -161,10 +165,10 @@
         @media (max-width: 1024px) {
             body { background-size: 450px; background-position: center 80px; }
             main { grid-template-columns: 1fr; padding-top: 2rem; }
-            .profile-image { max-width: 320px; margin: 0 auto 1.5rem auto; }
+            .profile-image { max-width: 320px; margin: 0 auto 0.5rem auto; }
             .profile-column { text-align: center; }
             .action-buttons { justify-content: center; }
-            .content-column { padding: 2rem; } /* Mobile Reset */
+            .content-column { padding: 2rem; }
             .name-plate { border-top: none; }
             .footer-branding { letter-spacing: 4px; font-size: 0.9rem; }
         }
@@ -195,24 +199,24 @@
             
             <div class="dissertation-card">
                 <h3>Dissertation Project</h3>
-                <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <span style="color:#444; font-size: 0.85rem;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
+                <p><strong>Informing Functional and Health Outcomes of Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
+                <span style="color:#444; font-size: 0.85rem;">Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
             </div>
 
             <div class="research-grid">
                 <div>
                     <h4>Primary Interests</h4>
                     <ul>
-                        <li>Trauma & Veteran Health</li>
-                        <li>Integrative Collaborative Care</li>
-                        <li>Neuromodulation Outcomes</li>
+                        <li>Trauma (PTSD) & Veteran Health (especially during transition back to civilian life)</li>
+                        <li>CL Psychology & Inpatient Behavioural Health (and brief interventions)</li>
+                        <li>Neuromodulation Outcomes Research</li>
                     </ul>
                 </div>
                 <div>
                     <h4>Collaborators</h4>
                     <ul>
-                        <li>ASPIRE Lab (Stony Brook)</li>
-                        <li>MACA Lab (Aging & Cognition)</li>
+                        <li>ASPIRE Lab (Alleviating Symptoms through Psychiatric Imaging Research & Engineering) @ Stony Brook Medicine</li>
+                        <li>MACA Lab (Mood and Cognition in Aging) @ McLean Hospital</li>
                     </ul>
                 </div>
             </div>
