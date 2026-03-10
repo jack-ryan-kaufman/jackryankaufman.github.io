@@ -11,9 +11,10 @@
             margin: 0; 
             padding: 0;
             background-color: #ffffff; 
-            color: #000; /* Darkened main text */
+            color: #000; 
             line-height: 1.5;
             font-weight: 450;
+            /* Floating Ensō background */
             background-image: url('enso.png'); 
             background-repeat: no-repeat;
             background-position: 85% 110px; 
@@ -31,7 +32,7 @@
             padding-top: 4rem;
         }
 
-        /* 1. Left Column */
+        /* 1. Left Column: Floating Headshot */
         .profile-column {
             display: flex;
             flex-direction: column;
@@ -62,7 +63,7 @@
             color: #000 !important;
         }
 
-        .subtitle { font-size: 1.1rem; color: #222; margin: 1rem 0 1.5rem 0; } /* Darkened */
+        .subtitle { font-size: 1.1rem; color: #222; margin: 1rem 0 1.5rem 0; }
 
         .action-buttons {
             display: flex;
@@ -87,21 +88,21 @@
 
         /* 2. Right Column Content */
         .content-column { 
-            padding: 0 4rem 2rem 2rem;
+            padding: 4.5rem 4rem 2rem 2rem; /* Added 4.5rem top padding to lower the text */
         }
 
         .intro-text {
             font-size: 1.15rem;
             max-width: 600px;
             margin-bottom: 2rem;
-            color: #111; /* Darkened */
+            color: #111;
         }
         
         .dissertation-card { 
             background: rgba(255, 255, 255, 0.85); 
             padding: 1.5rem 2rem;
             border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.12); /* Slightly more visible border */
+            border: 1px solid rgba(0, 0, 0, 0.12);
             box-shadow: 0 10px 40px rgba(0,0,0,0.03);
             margin: 1rem 0 2.5rem 0;
             backdrop-filter: blur(8px);
@@ -121,23 +122,23 @@
 
         .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #000;}
         
-        /* Bullet system */
+        /* Bullet system Fix */
         .research-grid ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+            list-style: none !important; /* Force hide default bullets */
+            padding: 0 !important;
+            margin: 0 !important;
         }
 
         .research-grid li {
+            list-style: none !important; /* Force hide default bullets */
             font-size: 0.95rem;
-            color: #222; /* Darkened */
+            color: #222;
             margin-bottom: 0.5rem;
             position: relative;
             padding-left: 1.2rem;
             line-height: 1.4;
         }
 
-        /* Subtle custom bullet */
         .research-grid li::before {
             content: "•";
             position: absolute;
@@ -150,7 +151,7 @@
             margin: 6rem auto 4rem auto;
             font-size: 1.1rem; 
             font-weight: 700;
-            color: #999; /* Darkened slightly from #bbb */
+            color: #999;
             text-transform: uppercase;
             letter-spacing: 6px; 
             text-align: center;
@@ -163,7 +164,7 @@
             .profile-image { max-width: 320px; margin: 0 auto 1.5rem auto; }
             .profile-column { text-align: center; }
             .action-buttons { justify-content: center; }
-            .content-column { padding: 2rem; }
+            .content-column { padding: 2rem; } /* Mobile Reset */
             .name-plate { border-top: none; }
             .footer-branding { letter-spacing: 4px; font-size: 0.9rem; }
         }
