@@ -11,13 +11,11 @@
             margin: 0; 
             padding: 0;
             background-color: #ffffff; 
-            color: #1a1a1a; 
+            color: #000; /* Darkened main text */
             line-height: 1.5;
             font-weight: 450;
-            /* Floating Ensō background */
             background-image: url('enso.png'); 
             background-repeat: no-repeat;
-            /* Moved up from 150px to 110px */
             background-position: 85% 110px; 
             background-size: 700px; 
             background-attachment: fixed;
@@ -33,7 +31,7 @@
             padding-top: 4rem;
         }
 
-        /* 1. Left Column: Floating Headshot */
+        /* 1. Left Column */
         .profile-column {
             display: flex;
             flex-direction: column;
@@ -61,10 +59,10 @@
             letter-spacing: -1.5px; 
             text-transform: uppercase; 
             line-height: 1;
-            color: #000 !important; /* Preserving high-contrast black */
+            color: #000 !important;
         }
 
-        .subtitle { font-size: 1.1rem; color: #555; margin: 1rem 0 1.5rem 0; }
+        .subtitle { font-size: 1.1rem; color: #222; margin: 1rem 0 1.5rem 0; } /* Darkened */
 
         .action-buttons {
             display: flex;
@@ -84,7 +82,7 @@
         }
 
         .cv-link { color: #fff; background-color: #000; }
-        .email-link { color: #000; background-color: #f0f0f0; }
+        .email-link { color: #000; background-color: #f4f4f4; }
         .btn-main:hover { opacity: 0.8; }
 
         /* 2. Right Column Content */
@@ -96,21 +94,22 @@
             font-size: 1.15rem;
             max-width: 600px;
             margin-bottom: 2rem;
+            color: #111; /* Darkened */
         }
         
         .dissertation-card { 
             background: rgba(255, 255, 255, 0.85); 
             padding: 1.5rem 2rem;
             border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
+            border: 1px solid rgba(0, 0, 0, 0.12); /* Slightly more visible border */
             box-shadow: 0 10px 40px rgba(0,0,0,0.03);
             margin: 1rem 0 2.5rem 0;
             backdrop-filter: blur(8px);
             max-width: 550px;
         }
 
-        .dissertation-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; }
-        .dissertation-card p { margin: 0; line-height: 1.4; }
+        .dissertation-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; color: #000; }
+        .dissertation-card p { margin: 0; line-height: 1.4; color: #111; }
 
         .research-grid {
             display: grid;
@@ -120,22 +119,44 @@
             max-width: 700px;
         }
 
-        .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;}
-        .research-grid p { font-size: 0.95rem; color: #444; margin: 0; line-height: 1.5; }
+        .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #000;}
+        
+        /* Bullet system */
+        .research-grid ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-        /* Centered institutional branding */
+        .research-grid li {
+            font-size: 0.95rem;
+            color: #222; /* Darkened */
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+            line-height: 1.4;
+        }
+
+        /* Subtle custom bullet */
+        .research-grid li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #888;
+            font-weight: bold;
+        }
+
         .footer-branding {
             margin: 6rem auto 4rem auto;
-            font-size: 1.1rem; /* Slightly bigger */
+            font-size: 1.1rem; 
             font-weight: 700;
-            color: #bbb;
+            color: #999; /* Darkened slightly from #bbb */
             text-transform: uppercase;
-            letter-spacing: 6px; /* Looser spacing */
+            letter-spacing: 6px; 
             text-align: center;
             width: 100%;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 1024px) {
             body { background-size: 450px; background-position: center 80px; }
             main { grid-template-columns: 1fr; padding-top: 2rem; }
@@ -144,7 +165,6 @@
             .action-buttons { justify-content: center; }
             .content-column { padding: 2rem; }
             .name-plate { border-top: none; }
-            h1 { color: #000 !important; }
             .footer-branding { letter-spacing: 4px; font-size: 0.9rem; }
         }
     </style>
@@ -175,24 +195,24 @@
             <div class="dissertation-card">
                 <h3>Dissertation Project</h3>
                 <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <span style="color:#666; font-size: 0.85rem;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
+                <span style="color:#444; font-size: 0.85rem;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
             </div>
 
             <div class="research-grid">
                 <div>
                     <h4>Primary Interests</h4>
-                    <p>
-                        Trauma & Veteran Health<br>
-                        Integrative Collaborative Care<br>
-                        Neuromodulation Outcomes
-                    </p>
+                    <ul>
+                        <li>Trauma & Veteran Health</li>
+                        <li>Integrative Collaborative Care</li>
+                        <li>Neuromodulation Outcomes</li>
+                    </ul>
                 </div>
                 <div>
                     <h4>Collaborators</h4>
-                    <p>
-                        ASPIRE Lab (Stony Brook)<br>
-                        MACA Lab (Aging & Cognition)
-                    </p>
+                    <ul>
+                        <li>ASPIRE Lab (Stony Brook)</li>
+                        <li>MACA Lab (Aging & Cognition)</li>
+                    </ul>
                 </div>
             </div>
         </div>
