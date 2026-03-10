@@ -7,26 +7,76 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
         body { 
-            max-width: 100%; margin: 0; padding: 0; background-color: #fff; color: #000; line-height: 1.6;
-            background-image: url('enso_transparent.png'); background-repeat: no-repeat;
-            background-position: calc(100% - 20px) 150px; background-size: 550px; background-attachment: fixed;
-        }
-        main { max-width: 1100px; margin: auto; padding: 4rem 1.5rem; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
-        .profile-column { display: flex; flex-direction: column; align-items: center; text-align: center; position: sticky; top: 4rem; }
-        
-        .profile-image { 
-            width: 280px; height: 280px; object-fit: cover; border-radius: 50%; 
-            border: 6px solid #f9f9f9; box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            margin-bottom: 1.5rem; 
+            max-width: 100%; 
+            margin: 0; 
+            padding: 0;
+            background-color: #ffffff; 
+            color: #000; 
+            line-height: 1.6;
+            /* Ensō Background - Fixed so it doesn't move when you scroll */
+            background-image: url('enso_transparent.png'); 
+            background-repeat: no-no-repeat;
+            background-position: calc(100% - 20px) 150px; 
+            background-size: 550px; 
+            background-attachment: fixed;
+            font-weight: 450;
         }
 
-        h1 { font-size: 2.8rem; margin: 0; font-weight: 800; border: none; letter-spacing: -1px; }
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 4rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; 
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: sticky;
+            top: 4rem;
+        }
+
+        /* This uses the transparent image you're about to download */
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 6px solid #f9f9f9;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            background-color: #fff; /* Ensures a clean white base behind you */
+        }
+
+        h1 { font-size: 2.8rem; margin: 0; font-weight: 800; border: none; letter-spacing: -1px;}
         .subtitle { font-size: 1.15rem; color: #444; margin-bottom: 1.5rem; }
-        .cv-link { text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; font-weight: 700; color: #fff; background-color: #000; padding: 0.8rem 2.5rem; border-radius: 4px; text-decoration: none; display: inline-block; }
-        
+
+        .cv-link {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            background-color: #000;
+            padding: 0.8rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .content-column h2 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; font-weight: 800; }
+        .dissertation-box { margin: 2.5rem 0; padding: 2rem; background: rgba(253, 253, 253, 0.9); border-left: 6px solid #005596; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+
         @media (max-width: 900px) {
             main { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1rem; }
             .profile-column { position: relative; top: 0; }
+            body { background-size: 300px; background-position: center bottom; background-attachment: scroll; }
         }
     </style>
 </head>
@@ -40,12 +90,18 @@
                 <a href="cv.pdf" class="cv-link">View CV</a>
             </div>
         </div>
+
         <div class="content-column">
             <h2>Clinical & Research Focus</h2>
-            <p>Clinical psychology doctoral candidate at <strong>UTSW</strong>, currently on the <strong>Consult-Liaison Service</strong> at Parkland Hospital.</p>
-            <div style="margin: 2rem 0; padding: 2rem; border-left: 6px solid #005596; background: #fdfdfd;">
-                <h3 style="font-size: 1.25rem;">Dissertation Project</h3>
-                <p>Carepartners in Electroconvulsive Therapy (ECT).</p>
+            <p>I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
+            <div class="dissertation-box">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #005596;">Dissertation Project</h3>
+                <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
+                <small>IPRP | Advisor: Dr. Shawn McClintock, PhD, MSCS</small></p>
+            </div>
+            <div class="grid-info">
+                <div><h4>Primary Interests</h4><p>Consult-Liaison Psychology<br>In-patient Behavioral Health<br>Trauma & Veteran Well-being</p></div>
+                <div><h4>Collaborators</h4><p>ASPIRE Lab (Stony Brook)<br>MACA Lab (Aging & Cognition)</p></div>
             </div>
         </div>
     </main>
