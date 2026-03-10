@@ -6,59 +6,50 @@
     <title>Jack R. Kaufman | UTSW</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        /* 1. Reset and Background Structure (ENSO CIRCLE) */
         body { 
             max-width: 100%; 
             margin: 0; 
             padding: 0;
             background-color: #ffffff; 
-            color: #000; 
-            line-height: 1.6;
-            /* Centering the Ensō behind the text */
-            background-image: url('enso.png'); 
-            background-repeat: no-repeat;
-            background-position: 85% 50%; /* Moves it behind the right column */
-            background-size: 700px; 
-            background-attachment: fixed;
+            color: #1a1a1a; 
+            line-height: 1.5;
             font-weight: 450;
         }
 
         main {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: auto;
-            padding: 0 1.5rem;
             display: grid;
-            grid-template-columns: 1.2fr 1.5fr; 
+            grid-template-columns: 1fr 1.4fr; 
             gap: 2rem;
-            align-items: end; /* This makes you 'sit' on the baseline */
+            align-items: end;
             min-height: 100vh;
         }
 
-        /* 2. Left Column: 'Floating' Cutout Headshot */
+        /* 1. Left Column: Baseline-aligned Headshot */
         .profile-column {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-            border-bottom: 1px solid #eaeaea; /* The baseline from the first mockup */
+            justify-content: flex-end;
+            padding: 0 2rem;
         }
 
         .profile-image {
-            width: 110%; /* Makes you 'bigger' than the container slightly */
-            max-width: 500px; 
+            width: 100%;
+            max-width: 480px;
             height: auto;
             display: block;
-            margin-bottom: -1px; /* Ties it to the border line */
-            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1)); /* Soft floating shadow */
+            /* Anchors your shoulders to the bottom line */
+            filter: drop-shadow(0 15px 40px rgba(0,0,0,0.06));
         }
 
-        .bio-text {
-            padding: 2rem 0;
-            width: 100%;
+        .name-plate {
+            padding: 2.5rem 0;
+            border-top: 1px solid #eee; /* Creates the baseline */
         }
 
-        h1 { font-size: 3.2rem; margin: 0; color: #000; font-weight: 800; border: none; letter-spacing: -1.5px;}
-        .subtitle { font-size: 1.1rem; color: #444; margin-bottom: 1.5rem; line-height: 1.3; }
+        h1 { font-size: 3.2rem; margin: 0; font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1;}
+        .subtitle { font-size: 1.1rem; color: #555; margin: 1rem 0 1.5rem 0; }
 
         .cv-link {
             text-transform: uppercase;
@@ -67,56 +58,72 @@
             font-weight: 700;
             color: #fff;
             background-color: #000;
-            padding: 0.7rem 2rem;
+            padding: 0.75rem 2.2rem;
             border-radius: 4px;
             text-decoration: none;
             display: inline-block;
         }
 
-        /* 3. Right Column: Content inside Ensō */
+        /* 2. Right Column: The Ensō Stage */
         .content-column { 
-            padding-bottom: 8rem; /* Keeps it vertically aligned with your headshot area */
+            position: relative;
+            padding: 4rem 4rem 6rem 2rem;
+            /* Moved the Ensō here to control it relative to this text only */
+            background-image: url('enso.png'); 
+            background-repeat: no-repeat;
+            background-position: center 55%; /* Vertically centers circle relative to text */
+            background-size: 750px; 
         }
         
-        .content-column > h2 { 
+        .section-header { 
             font-size: 1.8rem; 
-            margin: 0; 
             line-height: 1.1; 
             text-transform: uppercase; 
             letter-spacing: 1px; 
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             font-weight: 800;
         }
 
-        article { margin: 2rem 0; border: none; background: transparent; }
-        article h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #000; font-weight: 700; }
-
-        .grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
+        /* The 'Card' effect for Dissertation */
+        .dissertation-card { 
+            background: rgba(255, 255, 255, 0.92); /* Slight transparency to see enso under */
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            margin: 2rem 0;
+            backdrop-filter: blur(4px);
+            max-width: 550px;
         }
-        .grid h4 { font-size: 1rem; color: #000; font-weight: 700; margin-bottom: 0.5rem; text-transform: none;}
-        .grid p { font-size: 0.9rem; color: #555; margin: 0;}
 
-        /* Institutional branding at the bottom */
-        .footer-branding {
+        .dissertation-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            max-width: 700px;
+        }
+
+        .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .research-grid p { font-size: 0.9rem; color: #555; margin: 0; line-height: 1.4; }
+
+        .footer-links {
             margin-top: 4rem;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: #999;
-            display: flex;
-            gap: 1rem;
-            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Mobile Tweaks */
+        /* Mobile */
         @media (max-width: 1024px) {
-            body { background-size: 500px; background-position: center top 20%; }
-            main { grid-template-columns: 1fr; align-items: center; padding-top: 5vh;}
+            main { grid-template-columns: 1fr; }
+            .content-column { background-size: 500px; padding: 2rem; background-position: center; }
             .profile-image { max-width: 350px; margin: auto; }
-            .profile-column { align-items: center; text-align: center; border-bottom: none; }
-            .content-column { padding-bottom: 4rem; }
+            .profile-column { text-align: center; }
+            .name-plate { border-top: none; }
         }
     </style>
 </head>
@@ -125,7 +132,7 @@
     <main>
         <div class="profile-column">
             <img src="headshot.png" alt="Jack R. Kaufman" class="profile-image">
-            <div class="bio-text">
+            <div class="name-plate">
                 <h1>Jack R. Kaufman</h1>
                 <p class="subtitle">
                     <strong>Doctoral Candidate in Clinical Psychology</strong><br>
@@ -136,32 +143,36 @@
         </div>
 
         <div class="content-column">
-            <h2>CLINICAL PSYCHOLOGY &<br>CONSULT-LIAISON SERVICE</h2>
+            <div class="section-header">
+                Clinical Psychology &<br>Consult-Liaison Service
+            </div>
             
-            <p>I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
+            <p style="max-width: 600px;">I am a clinical psychology doctoral candidate at <strong>UTSW</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.</p>
             
-            <article>
+            <div class="dissertation-card">
                 <h3>Dissertation Project</h3>
                 <p><strong>Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
-                <small>Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock, PhD, MSCS</small></p>
-            </article>
+                <span style="color:#666; font-size: 0.9rem;">Interventional Psychiatry Research Program (IPRP)<br>Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
+            </div>
 
-            <div class="grid">
+            <div class="research-grid">
                 <div>
-                    <h4>Neuromodulation Outcomes Research</h4>
+                    <h4>Neuromodulation Outcomes</h4>
                     <p>Focusing on the intersection of interventional psychiatry and functional outcomes.</p>
                 </div>
                 <div>
-                    <h4>Collaborators & Affiliations</h4>
-                    <p>ASPIRE Lab (Stony Brook) | MACA Lab (Aging & Cognition)</p>
+                    <h4>Collaborators</h4>
+                    <p>ASPIRE Lab (Stony Brook)<br>MACA Lab (Aging & Cognition)</p>
                 </div>
             </div>
             
-            <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin-top: 3rem; color: #1a1a1a;">TRAUMA & VETERAN HEALTH</p>
-            <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; color: #1a1a1a;">INTEGRATIVE COLLABORATIVE CARE</p>
+            <div style="margin-top: 3rem;">
+                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #334155;">Trauma & Veteran Health</p>
+                <p style="text-transform: uppercase; font-weight: 800; font-size: 1.4rem; margin: 0; color: #334155;">Integrative Collaborative Care</p>
+            </div>
 
-            <div class="footer-branding">
-                <span>UTSW</span> | <span>PARKLAND</span> | <span>email@jackrkaufman.com</span>
+            <div class="footer-links">
+                UTSW &nbsp;|&nbsp; PARKLAND &nbsp;|&nbsp; email@jackrkaufman.com
             </div>
         </div>
     </main>
