@@ -2,102 +2,236 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack Ryan Kaufman</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jack R. Kaufman | UTSW</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        body {
-            font-family: 'Special Elite', cursive;
-            background-color: #f0f0f0; /* Fallback color */
-
-            /* --- UPDATED: New background image configuration --- */
-            background-image: url('AdobeStock_1913176239.jpg');
-            /* Ensure the image covers the entire background */
-            background-size: cover;
-            /* Center the background image */
-            background-position: center;
-            /* Prevent the image from tiling */
+        body { 
+            max-width: 100%; 
+            margin: 0; 
+            padding: 0;
+            background-color: #ffffff; 
+            color: #000; 
+            line-height: 1.5;
+            font-weight: 450;
+            /* Floating Ensō background */
+            background-image: url('enso.png'); 
             background-repeat: no-repeat;
-            /* Ensure background covers full viewport height */
-            background-attachment: fixed; 
-            /* -------------------------------------------------- */
+            background-position: 85% 110px; 
+            background-size: 700px; 
+            background-attachment: fixed;
+        }
 
+        main {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr; 
+            gap: 2rem;
+            align-items: start;
+            padding-top: 4rem;
+        }
+
+        /* 1. Left Column: Color Headshot and Tightened Name Plate */
+        .profile-column {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #333;
+            flex-direction: column;
+            padding: 0 2rem;
         }
 
-        .container {
-            text-align: center;
-            padding: 40px;
-            /* Semi-transparent background for readability */
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            max-width: 600px;
-            width: 90%;
+        .profile-image {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            display: block;
+            /* Subtle drop shadow to help the color photo 'pop' from the white bg */
+            filter: drop-shadow(0 15px 40px rgba(0,0,0,0.06));
+            margin-bottom: 0.2rem; /* Tightened further to pull name up */
         }
 
-        /* --- REMOVED: .enso-circle styles --- */
-
-        .headshot-container {
-            margin-bottom: 20px;
+        .name-plate {
+            padding-top: 0.8rem; /* Tightened line under shoulders */
+            border-top: 1px solid #eee;
         }
 
-        .headshot {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Circle headshot */
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        h1 { 
+            font-size: 3.2rem; 
+            margin: 0; 
+            font-weight: 800; 
+            letter-spacing: -1.5px; 
+            text-transform: uppercase; 
+            line-height: 1;
+            color: #000 !important;
         }
 
-        h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5em;
+        .subtitle { font-size: 1.1rem; color: #222; margin: 0.75rem 0 1.5rem 0; line-height: 1.3; }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
         }
 
-        p {
-            margin: 0 0 20px 0;
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        .cv-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
+        .btn-main {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.75rem 1.8rem;
+            border-radius: 4px;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
+            display: inline-block;
+            transition: opacity 0.2s ease;
         }
 
-        .cv-link:hover {
-            background-color: #555;
+        .cv-link { color: #fff; background-color: #000; }
+        .email-link { color: #000; background-color: #f4f4f4; }
+        .btn-main:hover { opacity: 0.8; }
+
+        /* 2. Right Column Content */
+        .content-column { 
+            padding: 4.5rem 4rem 2rem 2rem;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #111;
+        }
+        
+        .dissertation-card { 
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            margin: 1rem 0 2.5rem 0;
+            max-width: 550px;
+            
+            /* Textural background from GitHub assets */
+            background-image: url('greywash.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+        }
+
+        .dissertation-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; color: #000; }
+        .dissertation-card p { margin: 0; line-height: 1.4; color: #111; }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            max-width: 800px;
+        }
+
+        @media (min-width: 1200px) {
+            .research-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .research-grid h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #000;}
+        
+        .research-grid ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .research-grid li {
+            list-style: none !important;
+            font-size: 0.95rem;
+            color: #222;
+            margin-bottom: 0.85rem;
+            position: relative;
+            padding-left: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .research-grid li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .footer-branding {
+            margin: 3rem auto 4rem auto;
+            font-size: 1.1rem; 
+            font-weight: 700;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 6px; 
+            text-align: center;
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            body { background-size: 450px; background-position: center 80px; }
+            main { grid-template-columns: 1fr; padding-top: 2rem; }
+            .profile-image { max-width: 320px; margin: 0 auto 0.5rem auto; }
+            .profile-column { text-align: center; }
+            .action-buttons { justify-content: center; }
+            .content-column { padding: 2rem; }
+            .name-plate { border-top: none; }
+            .footer-branding { letter-spacing: 4px; font-size: 0.9rem; margin-top: 2rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="headshot-container">
-            <img src="headshot.png" alt="Jack Ryan Kaufman Headshot" class="headshot">
-        </div>
-        
-        <h1>Jack Ryan Kaufman</h1>
-        
-        <p>
-            Welcome to my personal website. I am a passionate individual exploring the intersections of technology, creativity, and zen philosophy.
-        </p>
 
-        <a href="cv.pdf" class="cv-link" target="_blank">View My CV</a>
+    <main>
+        <div class="profile-column">
+            <img src="headshot.png" alt="Jack R. Kaufman" class="profile-image">
+            <div class="name-plate">
+                <h1>Jack R. Kaufman</h1>
+                <p class="subtitle">
+                    <strong>Doctoral Candidate in Clinical Psychology</strong><br>
+                    UT Southwestern Medical Center
+                </p>
+                <div class="action-buttons">
+                    <a href="cv.pdf" class="btn-main cv-link">CV</a>
+                    <a href="mailto:Jack.Kaufman@utsouthwestern.edu" class="btn-main email-link">Email Me</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-column">
+            <p class="intro-text">
+                I am a clinical psychology doctoral candidate at <strong>UT Southwestern</strong>, currently working on the <strong>Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital.
+            </p>
+            
+            <div class="dissertation-card">
+                <h3>Dissertation Project</h3>
+                <p><strong>Informing Functional and Health Outcomes of Carepartners in Electroconvulsive Therapy (ECT).</strong><br>
+                <span style="color:#444; font-size: 0.85rem;">Interventional Psychiatry Research Program (IPRP) | Advisor: Dr. Shawn McClintock, PhD, MSCS</span></p>
+            </div>
+
+            <div class="research-grid">
+                <div>
+                    <h4>Primary Interests</h4>
+                    <ul>
+                        <li>Trauma (PTSD) & Veteran Health (especially during transition back to civilian life)</li>
+                        <li>CL Psychology & Inpatient Behavioural Health (and brief interventions)</li>
+                        <li>Neuromodulation Outcomes Research</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Collaborators</h4>
+                    <ul>
+                        <li>ASPIRE Lab (Alleviating Symptoms through Psychiatric Imaging Research & Engineering) @ Stony Brook Medicine</li>
+                        <li>MACA Lab (Mood and Cognition in Aging) @ McLean Hospital</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer-branding">
+        UTSW &nbsp;|&nbsp; PARKLAND
     </div>
+
 </body>
 </html>
