@@ -1,0 +1,13 @@
+{
+  "name": "jrk-portfolio",
+  "version": "1.0.0",
+  "description": "Jack R. Kaufman portfolio — magazine-editorial academic site",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o assets/css/style.css --minify",
+    "watch": "tailwindcss -i src/input.css -o assets/css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

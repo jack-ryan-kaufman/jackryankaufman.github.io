@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+   * Sidebar texture: fine dot grid on the body background.
+   * Only visible in the margins left/right of the max-w-5xl container.
+   * The bg-[#f4f4f4] set on <body> provides the base color;
+   * this pattern sits on top of it, reading like fine newsprint grain.
+   */
+  body {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+}
+
+@layer utilities {
+  /*
+   * Fluid display type for the hero name.
+   * Tailwind can't generate clamp() via a class alone,
+   * so we define it here and reference the class in HTML.
+   */
+  .hero-name {
+    font-size: clamp(2.6rem, 6.5vw, 5.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.04em;
+  }
+
+  /*
+   * Masthead + footer ribbons: greywash photo with a darkening overlay
+   * stacked directly in background-image so text needs no z-index tricks.
+   */
+  .bg-greywash {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+      url('../images/greywash.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /*
+   * Dissertation card: kintsugi gold-crack texture.
+   * The kintsugi metaphor — broken things repaired with gold —
+   * is quietly resonant with the healing work of clinical psychology.
+   * Opacity at 18% so the gold veins are visible but text stays legible.
+   */
+  .bg-texture-kintsugi {
+    position: relative;
+  }
+  .bg-texture-kintsugi::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/kintsugi.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+}
