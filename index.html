@@ -30,7 +30,7 @@
       <div class="bg-greywash px-5 py-3 flex justify-center items-center gap-4">
         <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
         <span class="text-[11px] font-bold tracking-widest uppercase text-white/80">
-          UT Southwestern · Parkland Hospital
+          UT Southwestern · Parkland Hospital · McLean Hospital (MGH)
         </span>
         <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
       </div>
@@ -50,7 +50,13 @@
       </div>
 
       <!-- Name / bio card -->
-      <div class="bg-[#F4F1EA] p-8 lg:p-12 flex flex-col justify-between min-h-[260px] lg:min-h-0">
+      <div class="bg-[#F4F1EA] p-8 lg:p-12 flex flex-col justify-between min-h-[260px] lg:min-h-0 relative overflow-hidden">
+
+        <!-- Ensō — real brush stroke PNG revealed by a sweeping conic-gradient mask:
+             BL → TL → TR → BR, 45° gap at end for the traditional open ensō form -->
+        <img src="assets/images/enso.png"
+             class="enso-img absolute right-0 top-[38%] -translate-y-1/2 w-56 h-56 lg:w-72 lg:h-72 opacity-40 pointer-events-none"
+             alt="" aria-hidden="true">
         <div>
           <span class="text-[11px] font-bold tracking-widest uppercase text-gray-500 block mb-10">
             Doctoral Candidate · Clinical Psychology
@@ -94,6 +100,14 @@
           <p class="text-sm text-gray-500 mt-1">
             Advisor: Dr. Shawn McClintock, PhD, MSCS
           </p>
+          <a
+            href="https://jmlewisfoundation.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[11px] font-bold tracking-widest uppercase text-[#8C5637] hover:underline mt-3 inline-block"
+          >
+            Funded · Jerry Lewis Foundation →
+          </a>
         </div>
       </article>
 
@@ -137,7 +151,7 @@
           aria-label="UTSW Clinical Psychology Program"
         >
           <span class="text-[11px] font-bold tracking-widest uppercase text-gray-400 group-hover:text-white/50 block mb-2">
-            Department
+            Department of
           </span>
           <span class="text-base font-black uppercase tracking-tight text-black group-hover:text-white flex items-center gap-1">
             Psychiatry
@@ -153,44 +167,145 @@
     ════════════════════════════════════════════════════════════ -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-      <!-- Primary Interests card -->
+      <!-- Primary Interests card — expandable via <details>/<summary> -->
       <section class="bg-[#F4F1EA] p-8 lg:p-10" aria-labelledby="interests-heading">
         <h3 id="interests-heading" class="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-5">
           Primary Interests
         </h3>
-        <ul>
-          <li class="border-t border-black pt-3.5 pb-3.5">
-            <span class="text-sm font-bold text-black block leading-tight">Trauma &amp; Veteran Health</span>
-            <span class="text-xs text-gray-500 mt-0.5 block">PTSD · Transition to civilian life</span>
-          </li>
-          <li class="border-t border-black pt-3.5 pb-3.5">
-            <span class="text-sm font-bold text-black block leading-tight">CL Psychology &amp; Inpatient Behavioural
-              Health</span>
-            <span class="text-xs text-gray-500 mt-0.5 block">Brief interventions</span>
-          </li>
-          <li class="border-t border-black pt-3.5">
-            <span class="text-sm font-bold text-black block leading-tight">Lifestyle Medicine</span>
-          </li>
-        </ul>
+
+        <!-- Trauma & Veteran Health -->
+        <details class="group" open>
+          <summary class="border-t border-black pt-3.5 pb-3.5 cursor-pointer flex justify-between items-center gap-2">
+            <span class="text-sm font-bold text-black leading-tight">Trauma &amp; Veteran Health</span>
+            <span class="text-[#8C5637] font-black text-lg leading-none flex-shrink-0 transition-transform duration-200 group-open:rotate-45 inline-block">+</span>
+          </summary>
+          <div class="pb-4 pl-3 border-l-2 border-[#8C5637] ml-0.5 space-y-2 mt-1">
+            <p class="text-xs text-gray-600">Post traumatic growth &amp; PTSD</p>
+            <p class="text-xs text-gray-600">Transition to civilian life</p>
+            <p class="text-xs text-gray-600">
+              Lifestyle &amp; complementary interventions —
+              <a href="https://www.wedefyfoundation.org/" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1 text-[10px] font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100">We Defy Foundation</a>
+            </p>
+          </div>
+        </details>
+
+        <!-- CL Psychology -->
+        <details class="group" open>
+          <summary class="border-t border-black pt-3.5 pb-3.5 cursor-pointer flex justify-between items-center gap-2">
+            <span class="text-sm font-bold text-black leading-tight">CL Psychology &amp; Inpatient Behavioural Health</span>
+            <span class="text-[#8C5637] font-black text-lg leading-none flex-shrink-0 transition-transform duration-200 group-open:rotate-45 inline-block">+</span>
+          </summary>
+          <div class="pb-4 pl-3 border-l-2 border-[#8C5637] ml-0.5 space-y-2 mt-1">
+            <p class="text-xs text-gray-600">Ultra abbreviated interventions</p>
+            <p class="text-xs text-gray-600">Focused ACT (acceptance &amp; commitment therapy)</p>
+            <p class="text-xs text-gray-600">Brief action planning (BAP) &amp; motivational interviewing</p>
+            <a href="https://societyforhealthpsychology.org/get-involved/interest-groups/consultation-liaison-psychology/"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1 text-[10px] font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100 mt-1">SFHP Interest Group</a>
+          </div>
+        </details>
+
+        <!-- closing rule -->
+        <div class="border-t border-black"></div>
       </section>
 
       <!-- Collaborators card -->
-      <section class="bg-[#F4F1EA] p-8 lg:p-10" aria-labelledby="collaborators-heading">
+      <section class="bg-[#F4F1EA] p-8 lg:p-10 flex flex-col" aria-labelledby="collaborators-heading">
         <h3 id="collaborators-heading" class="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-5">
           Collaborators
         </h3>
         <ul>
           <li class="border-t border-black pt-3.5 pb-3.5">
             <span class="text-sm font-bold text-black block leading-tight">ASPIRE Lab</span>
-            <span class="text-xs text-gray-500 mt-0.5 block">
-              Alleviating Symptoms through Psychiatric Imaging Research &amp; Engineering · Stony Brook Medicine
-            </span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-[#8C5637] mt-0.5 block">Stony Brook Medicine</span>
+            <span class="text-xs text-gray-500 mt-1 block">Alleviating Symptoms through Psychiatric Imaging Research &amp; Engineering</span>
+            <span class="text-xs text-gray-400 italic mt-1 block">Jodi Weinstein, MD</span>
           </li>
-          <li class="border-t border-black pt-3.5">
+          <li class="border-t border-black pt-3.5 pb-3.5">
             <span class="text-sm font-bold text-black block leading-tight">MACA Lab</span>
-            <span class="text-xs text-gray-500 mt-0.5 block">
-              Mood and Cognition in Aging · McLean Hospital
-            </span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-[#8C5637] mt-0.5 block">McLean Hospital</span>
+            <span class="text-xs text-gray-500 mt-1 block">Mood and Cognition in Aging</span>
+            <span class="text-xs text-gray-400 italic mt-1 block">Sara Weisenbach, PhD</span>
+          </li>
+          <li class="border-t border-black"></li>
+        </ul>
+        <!-- Flex fill — grows to absorb extra height when interests are expanded; collapses to nothing when they're closed -->
+        <div class="flex-1 min-h-0 mt-4 overflow-hidden relative" aria-hidden="true">
+          <div class="absolute inset-0" style="background-image: url('assets/images/kintsugi.jpeg'); background-size: cover; background-position: center; opacity: 0.08;"></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         EDUCATION + CLINICAL TRAINING — separate floating cards
+    ════════════════════════════════════════════════════════════ -->
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-4">
+
+      <!-- Education card -->
+      <section class="bg-[#F4F1EA] p-6 lg:p-8" aria-labelledby="education-heading">
+        <h3 id="education-heading" class="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-4">
+          Education
+        </h3>
+        <ul>
+          <li class="border-t border-gray-200 pt-3.5 pb-3.5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[9px] font-bold tracking-widest uppercase bg-[#8C5637] text-white px-1.5 py-0.5">Doctor of Philosophy</span>
+                  <span class="text-[10px] text-[#8C5637]/70 italic">In progress</span>
+                </div>
+                <span class="text-sm font-bold text-black block leading-tight">UT Southwestern Medical Center</span>
+                <span class="text-xs text-gray-400 block mt-0.5">Dallas, TX</span>
+              </div>
+              <span class="text-sm font-bold text-[#8C5637] flex-shrink-0">2027</span>
+            </div>
+          </li>
+          <li class="border-t border-gray-200 pt-3.5 pb-3.5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <span class="text-[9px] font-bold tracking-widest uppercase bg-black text-white px-1.5 py-0.5 inline-block mb-1">Master of Arts</span>
+                <span class="text-sm font-bold text-black block leading-tight">Tel Aviv University</span>
+                <span class="text-xs text-gray-400 block mt-0.5">Tel Aviv, Israel</span>
+              </div>
+              <span class="text-sm font-bold text-[#8C5637] flex-shrink-0">2019</span>
+            </div>
+          </li>
+          <li class="border-t border-gray-200 pt-3.5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <span class="text-[9px] font-bold tracking-widest uppercase bg-black text-white px-1.5 py-0.5 inline-block mb-1">Bachelor of Arts</span>
+                <span class="text-sm font-bold text-black block leading-tight">University of Florida</span>
+                <span class="text-xs text-gray-400 block mt-0.5">Gainesville, FL</span>
+              </div>
+              <span class="text-sm font-bold text-[#8C5637] flex-shrink-0">2017</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Clinical Training card -->
+      <section class="bg-[#F4F1EA] p-6 lg:p-8" aria-labelledby="training-heading">
+        <h3 id="training-heading" class="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-4">
+          Clinical Training
+        </h3>
+        <ul>
+          <!-- Internship — current, warm brown strip -->
+          <li class="border-t border-gray-200 -mx-6 lg:-mx-8 px-6 lg:px-8 pt-3.5 pb-3.5 bg-[#E8E0D2]">
+            <span class="text-[9px] font-bold tracking-widest uppercase text-[#8C5637] block mb-1">Internship</span>
+            <span class="text-sm font-bold text-black block leading-tight">Consultation-Liaison Psychiatry Service</span>
+            <span class="text-xs text-gray-500 mt-0.5 block">Parkland Hospital</span>
+          </li>
+          <li class="border-t border-gray-200 pt-3.5 pb-3.5">
+            <span class="text-[9px] font-bold tracking-widest uppercase text-[#8C5637] block mb-1">Therapy</span>
+            <span class="text-sm font-bold text-black block leading-tight">Southwestern Psychotherapy Clinic</span>
+            <span class="text-xs text-gray-500 mt-0.5 block">UT Southwestern</span>
+          </li>
+          <li class="border-t border-gray-200 pt-3.5">
+            <span class="text-[9px] font-bold tracking-widest uppercase text-[#8C5637] block mb-1">Practicum</span>
+            <span class="text-sm font-bold text-black block leading-tight">Population Health / Community Oriented Primary Care</span>
+            <span class="text-xs text-gray-500 mt-0.5 block">Parkland Hospital</span>
           </li>
         </ul>
       </section>

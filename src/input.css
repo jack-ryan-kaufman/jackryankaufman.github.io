@@ -4,6 +4,17 @@
 
 @layer base {
   /*
+   * Remove the native browser disclosure triangle from <details>/<summary>
+   * so we can replace it with our own +/× rust indicator.
+   */
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /*
    * Body: diagonal gradient from a lighter forest green (top-left)
    * to a deep near-black green (bottom-right), with the white dot
    * grid layered on top. Multiple background-image values stack
@@ -12,8 +23,53 @@
   body {
     background-image:
       radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(145deg, #4A5E4C 0%, #3C4A3E 45%, #222D24 100%);
+      radial-gradient(ellipse 160% 120% at 50% 5%, #607A64 0%, #3C4A3E 55%, #192618 100%);
     background-size: 18px 18px, 100% 100%;
+    background-attachment: fixed;
+  }
+}
+
+@layer base {
+  /*
+   * Ensō reveal animation.
+   * @property makes --enso-angle interpolatable so the conic-gradient
+   * mask sweeps smoothly. Starts at 225° (bottom-left / ~7:30) and
+   * sweeps clockwise 315° — BL → TL → TR → BR — leaving a 45° gap
+   * at the end for the traditional open ensō form.
+   */
+  @property --enso-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  @keyframes enso-sweep {
+    from { --enso-angle: 0deg;   }
+    to   { --enso-angle: 315deg; }
+  }
+
+  .enso-img {
+    /* Two mask layers intersected:
+       1. Linear gradient fades the bottom edge to transparent so the clip dissolves naturally
+       2. Conic gradient controls the sweep animation
+       mask-composite: intersect means only pixels visible in BOTH layers show */
+    -webkit-mask-image:
+      linear-gradient(to bottom, black 55%, transparent 92%),
+      conic-gradient(from 225deg, black var(--enso-angle), transparent var(--enso-angle));
+    mask-image:
+      linear-gradient(to bottom, black 55%, transparent 92%),
+      conic-gradient(from 225deg, black var(--enso-angle), transparent var(--enso-angle));
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    animation: enso-sweep 2.2s cubic-bezier(0.45, 0.05, 0.3, 0.95) 0.4s both;
+    mix-blend-mode: multiply;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .enso-img {
+      animation: none;
+      --enso-angle: 315deg;
+    }
   }
 }
 
