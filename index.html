@@ -3,95 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jack R. Kaufman — Doctoral Candidate in Clinical Psychology at UT Southwestern Medical Center">
-  <title>Jack R. Kaufman | UTSW</title>
+  <meta name="description" content="Jack Ryan Kaufman — Doctoral Candidate in Clinical Psychology at the University of Texas Southwestern Medical Center">
+  <title>Jack Ryan Kaufman | UTSW</title>
 
-  <!-- Inter: tight, high-contrast display face used throughout -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 
-  <!-- Tailwind build output -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<!-- Fix #4: off-white body so the white container reads as "paper on a desk" -->
-<body class="bg-[#f4f4f4] text-black font-sans antialiased">
+<!-- Dark forest green fills the entire viewport; cards float on top -->
+<body class="bg-[#3C4A3E] text-black font-sans antialiased min-h-screen p-4 lg:p-6">
 
-  <!-- Fix #4: explicit bg-white on the container -->
-  <div class="max-w-5xl mx-auto border-x border-black border-t-2 border-t-[#FF0050] border-b-2 border-b-[#FF0050] min-h-screen bg-white">
+  <!-- Transparent wrapper — green background shows through the gaps -->
+  <div class="max-w-5xl mx-auto flex flex-col gap-4">
 
     <!-- ═══════════════════════════════════════════════════════════
-         MASTHEAD BAR
-         Fix #2: right slot becomes a persistent mailto CTA in magenta
-         Fix #3: 9px → 11px, custom tracking → tracking-widest
+         MASTHEAD — greywash card
     ════════════════════════════════════════════════════════════ -->
-    <div class="bg-greywash border-b border-black px-5 py-2.5 flex justify-center items-center gap-4">
-      <span class="block w-6 h-px bg-[#FF0050]" aria-hidden="true"></span>
-      <span class="text-[11px] font-bold tracking-widest uppercase text-white/80">
-        UT Southwestern · Parkland Hospital
-      </span>
-      <span class="block w-6 h-px bg-[#FF0050]" aria-hidden="true"></span>
+    <header>
+      <div class="bg-greywash px-5 py-3 flex justify-center items-center gap-4">
+        <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
+        <span class="text-[11px] font-bold tracking-widest uppercase text-white/80">
+          UT Southwestern · Parkland Hospital
+        </span>
+        <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO ROW — headshot card + name/bio card
+    ════════════════════════════════════════════════════════════ -->
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4">
+
+      <!-- Headshot card -->
+      <div class="bg-[#F4F1EA] overflow-hidden h-64 lg:h-auto">
+        <picture>
+          <img
+            src="assets/images/headshot.png"
+            alt="Portrait of Jack Ryan Kaufman"
+            class="w-full h-full object-cover object-top grayscale contrast-125"
+            loading="eager"
+          >
+        </picture>
+      </div>
+
+      <!-- Name / bio card -->
+      <div class="bg-[#F4F1EA] p-8 lg:p-12 flex flex-col justify-between min-h-[260px] lg:min-h-0">
+        <div>
+          <span class="text-[11px] font-bold tracking-widest uppercase text-gray-500 block mb-10">
+            Doctoral Candidate · Clinical Psychology
+          </span>
+          <h1 class="hero-name font-black uppercase text-black">
+            <span class="block text-[0.72em]">Jack Ryan</span>
+            <span class="block">Kaufman</span>
+          </h1>
+        </div>
+        <p class="text-base lg:text-lg font-medium text-gray-800 mt-6 leading-snug max-w-md border-l-2 border-gray-400 pl-4">
+          Doctoral candidate at <strong class="text-black font-bold">the University of Texas
+          Southwestern Medical Center</strong>, currently on the <strong class="text-black
+          font-bold">Consult-Liaison (CL) Psychiatry Service</strong> at Parkland Hospital
+          for his American Psychological Association accredited internship.
+        </p>
+      </div>
+
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         HERO — name + headshot
+         DISSERTATION ROW — lead story card + stacked sidebar cards
     ════════════════════════════════════════════════════════════ -->
-    <section class="border-b border-black" aria-label="Profile">
-      <div class="lg:grid lg:grid-cols-[320px_1fr]">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-4">
 
-        <!-- Headshot — now on the left; owns the divider border -->
-        <div class="h-64 lg:h-auto overflow-hidden bg-gray-100 border-b border-black lg:border-b-0 lg:border-r">
-          <picture>
-            <img
-              src="assets/images/headshot.png"
-              alt="Portrait of Jack R. Kaufman"
-              class="w-full h-full object-cover object-top grayscale contrast-125"
-              loading="eager"
-            >
-          </picture>
-        </div>
-
-        <!-- Name block — now on the right -->
-        <div class="p-8 lg:p-12 flex flex-col justify-between min-h-[260px] lg:min-h-[400px]">
-          <div>
-            <span class="text-[11px] font-bold tracking-widest uppercase text-gray-500 block mb-10">
-              Doctoral Candidate · Clinical Psychology
-            </span>
-            <h1 class="hero-name font-black uppercase text-black">
-              <span class="block text-[0.72em]">Jack Ryan</span>
-              <span class="block">Kaufman</span>
-            </h1>
-          </div>
-          <p class="text-base lg:text-lg font-medium text-gray-800 mt-6 leading-snug max-w-md border-l-2 border-gray-400 pl-4">
-            Doctoral candidate at <strong class="text-black font-bold">the University of Texas Southwestern Medical
-            Center</strong>, currently on the <strong class="text-black font-bold">Consult-Liaison
-            (CL) Psychiatry Service</strong> at Parkland Hospital for his American Psychological Association accredited internship.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         DISSERTATION (lead story) + QUICK-LINKS sidebar
-    ════════════════════════════════════════════════════════════ -->
-    <div class="md:grid md:grid-cols-[1fr_300px] border-b border-black">
-
-      <!-- Lead story -->
-      <!-- border-l-4 in magenta is a structural accent, not a text label — acceptable -->
-      <article class="bg-texture-kintsugi p-8 lg:p-10 border-b border-black md:border-b-0 md:border-r border-l-4 border-l-[#FF0050]" aria-labelledby="dissertation-heading">
+      <!-- Dissertation card — kintsugi texture + rust left accent -->
+      <article
+        class="bg-texture-kintsugi bg-[#F4F1EA] p-8 lg:p-10 border-l-4 border-l-[#8C5637]"
+        aria-labelledby="dissertation-heading"
+      >
         <span class="text-[11px] font-bold tracking-widest uppercase text-gray-500 block mb-4">
           Dissertation Project
         </span>
-
         <h2 id="dissertation-heading" class="text-2xl lg:text-3xl font-black tracking-tight leading-tight text-black mb-6">
           Informing Functional and Health Outcomes of Carepartners in
           Electroconvulsive Therapy (ECT)
         </h2>
-
         <div class="border-t border-black pt-4">
-          <!-- Fix #3: 10px custom tracking → 11px tracking-wider -->
           <p class="text-[11px] font-bold tracking-wider uppercase">
             Interventional Psychiatry Research Program (IPRP)
           </p>
@@ -101,13 +97,13 @@
         </div>
       </article>
 
-      <!-- Quick-links sidebar -->
-      <aside class="flex flex-col divide-y divide-black" aria-label="Quick links">
+      <!-- Sidebar: three stacked cards -->
+      <div class="flex flex-col gap-4">
 
-        <!-- CV — secondary CTA: inverts to black on hover -->
+        <!-- CV card -->
         <a
           href="cv.pdf"
-          class="block p-6 group transition-colors duration-150 bg-[#CC0040] hover:bg-black active:opacity-75 focus-visible:bg-black focus-visible:outline-none"
+          class="block bg-[#6B4127] p-6 group transition-colors duration-150 hover:bg-black active:opacity-75 focus-visible:bg-black focus-visible:outline-none"
           aria-label="Download curriculum vitae PDF"
         >
           <span class="text-[11px] font-bold tracking-widest uppercase text-white/60 group-hover:text-white/50 block mb-2">
@@ -119,10 +115,10 @@
           </span>
         </a>
 
-        <!-- Fix #1 + #2: Email is PRIMARY CTA — solid magenta by default, inverts to black on hover -->
+        <!-- Email card — primary CTA, lighter rust -->
         <a
           href="mailto:Jack.Kaufman@utsouthwestern.edu"
-          class="block p-6 group transition-colors duration-150 bg-[#FF0050] hover:bg-black active:opacity-75 focus-visible:outline-none"
+          class="block bg-[#8C5637] p-6 group transition-colors duration-150 hover:bg-black active:opacity-75 focus-visible:outline-none"
           aria-label="Send email to Jack Kaufman"
         >
           <span class="text-[11px] font-bold tracking-widest uppercase text-white/60 group-hover:text-white/50 block mb-2">
@@ -134,8 +130,8 @@
           </span>
         </a>
 
-        <!-- Department info block -->
-        <div class="p-6 flex-1">
+        <!-- Department info card -->
+        <div class="bg-[#F4F1EA] p-6 flex-1">
           <span class="text-[11px] font-bold tracking-widest uppercase text-gray-400 block mb-2">
             Department
           </span>
@@ -144,17 +140,16 @@
           </p>
         </div>
 
-      </aside>
+      </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         INTERESTS + COLLABORATORS
+         INTERESTS + COLLABORATORS ROW — two equal cards
     ════════════════════════════════════════════════════════════ -->
-    <div class="sm:grid sm:grid-cols-2 border-b border-black">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-      <!-- Primary Interests -->
-      <section class="p-8 lg:p-10 border-b border-black sm:border-b-0 sm:border-r" aria-labelledby="interests-heading">
-        <!-- Fix #1: static section label → gray -->
+      <!-- Primary Interests card -->
+      <section class="bg-[#F4F1EA] p-8 lg:p-10" aria-labelledby="interests-heading">
         <h3 id="interests-heading" class="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-5">
           Primary Interests
         </h3>
@@ -173,9 +168,8 @@
         </ul>
       </section>
 
-      <!-- Collaborators -->
-      <section class="p-8 lg:p-10" aria-labelledby="collaborators-heading">
-        <!-- Fix #1: static section label → gray -->
+      <!-- Collaborators card -->
+      <section class="bg-[#F4F1EA] p-8 lg:p-10" aria-labelledby="collaborators-heading">
         <h3 id="collaborators-heading" class="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-5">
           Collaborators
         </h3>
@@ -198,18 +192,17 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         FOOTER
-         Fix #3: 9px → 11px, custom tracking → tracking-widest
+         FOOTER — greywash card
     ════════════════════════════════════════════════════════════ -->
     <footer class="bg-greywash px-8 py-5 flex justify-center items-center gap-4" aria-label="Site footer">
-      <span class="block w-6 h-px bg-[#FF0050]" aria-hidden="true"></span>
+      <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
       <span class="text-[11px] font-bold tracking-widest uppercase text-white/70">
         jackryankaufman.com
       </span>
-      <span class="block w-6 h-px bg-[#FF0050]" aria-hidden="true"></span>
+      <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
     </footer>
 
-  </div><!-- /max-w-5xl -->
+  </div>
 
 </body>
 </html>
