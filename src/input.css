@@ -21,11 +21,9 @@
    * front-to-back, so the dots sit above the gradient.
    */
   body {
-    background-image:
-      radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      radial-gradient(ellipse 160% 120% at 50% 5%, #607A64 0%, #3C4A3E 55%, #192618 100%);
-    background-size: 18px 18px, 100% 100%;
-    background-attachment: fixed;
+    background-color: #F5F1EB;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.028) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
 
@@ -61,7 +59,7 @@
       conic-gradient(from 225deg, black var(--enso-angle), transparent var(--enso-angle));
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
-    animation: enso-sweep 2.2s cubic-bezier(0.45, 0.05, 0.3, 0.95) 0.4s both;
+    animation: enso-sweep 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
     mix-blend-mode: multiply;
   }
 
@@ -90,6 +88,12 @@
    * internal gradient so they feel deeper than a flat fill.
    * Sits noticeably darker than the body green for clear framing.
    */
+  /* Micro-elevation for white cards on cream background */
+  .card-surface {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
   .bg-greywash {
     background-image: linear-gradient(135deg, #1E2B20 0%, #111A12 100%);
   }
