@@ -4,11 +4,17 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'Inter',
+        '"Public Sans"',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
+        'sans-serif',
+      ],
+      display: [
+        '"Libre Franklin"',
+        '"Public Sans"',
+        'system-ui',
         'sans-serif',
       ],
     },
