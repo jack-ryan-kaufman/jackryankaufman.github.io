@@ -115,6 +115,60 @@
       opacity: 0.20 !important;
     }
 
+
+    /* Affiliation logo strip — Primary Interests card.
+       Marks are desaturated so the page keeps its single warm hue,
+       and bloom to full colour on hover/focus. The .space-y-2
+       selector outranks Tailwind's sibling margin so the strip
+       keeps its own spacing above the hairline rule. */
+    .space-y-2 > .affil-strip,
+    .affil-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: 1.5rem;
+      row-gap: 0.25rem;
+      margin-top: 0.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(140, 86, 55, 0.15);
+      --affil-scale: 1.3;
+    }
+
+    .affil-logo {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;            /* WCAG 2.5.5 target size */
+    }
+
+    /* Heights are set per-mark, not matched, for optical balance:
+       SfHP is a 6:1 wordmark, BAP a 1.67:1 stacked lockup.
+       Tune both together with --affil-scale (1 = original size). */
+    .affil-logo img {
+      display: block;
+      width: auto;
+      filter: grayscale(1);
+      opacity: 0.55;
+      transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    .affil-logo--sfhp img { height: calc(21px * var(--affil-scale)); }
+    .affil-logo--bap  img { height: calc(33px * var(--affil-scale)); }
+
+    .affil-logo:hover img,
+    .affil-logo:focus-visible img {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    .affil-logo:focus-visible {
+      outline: 2px solid #8C5637;
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .affil-logo img { transition: none; }
+    }
+
   </style>
 </head>
 
@@ -343,15 +397,27 @@
             <span class="text-[#8C5637] font-bold text-base leading-none flex-shrink-0 transition-transform duration-200 group-open:rotate-90 inline-block">›</span>
           </summary>
           <div class="pb-4 pl-3 border-l-2 border-[#8C5637] ml-0.5 space-y-2 mt-1">
-            <a href="https://societyforhealthpsychology.org/get-involved/interest-groups/consultation-liaison-psychology/"
-               target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1 text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100">SFHP Interest Group</a>
             <p class="text-sm text-gray-600">Ultra abbreviated interventions</p>
             <p class="text-sm text-gray-600">Focused ACT (acceptance &amp; commitment therapy)</p>
             <p class="text-sm text-gray-600">Brief action planning (BAP) &amp; motivational interviewing</p>
-            <a href="https://bapprofessionalnetwork.org/about-bap/bap-mi/"
-               target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1 text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100">BAP Professional Network</a>
+
+            <!-- Affiliation logos: muted by default, full colour on hover/focus -->
+            <ul class="affil-strip">
+              <li>
+                <a href="https://societyforhealthpsychology.org/get-involved/interest-groups/consultation-liaison-psychology/"
+                   target="_blank" rel="noopener noreferrer" class="affil-logo affil-logo--sfhp">
+                  <img src="assets/images/SfHP.png" alt="Society for Health Psychology"
+                       width="788" height="131" loading="lazy" decoding="async">
+                </a>
+              </li>
+              <li>
+                <a href="https://bapprofessionalnetwork.org/about-bap/bap-mi/"
+                   target="_blank" rel="noopener noreferrer" class="affil-logo affil-logo--bap">
+                  <img src="assets/images/BAP.png" alt="BAP Professional Network"
+                       width="300" height="180" loading="lazy" decoding="async">
+                </a>
+              </li>
+            </ul>
           </div>
         </details>
 
