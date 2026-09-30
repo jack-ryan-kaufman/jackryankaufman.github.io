@@ -5,8 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Jack Ryan Kaufman — Doctoral Candidate in Clinical Psychology at the University of Texas Southwestern Medical Center">
-  <title>Jack Ryan Kaufman | UTSW</title>
+    content="Jack Ryan Kaufman, doctoral candidate in clinical psychology at UT Southwestern Medical Center. Research on engagement in mental health care among service members and veterans after military separation.">
+  <title>Jack Ryan Kaufman | Clinical Psychology, UT Southwestern</title>
+
+  <!-- Structured data for search engines. Not visible on the page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jack Ryan Kaufman",
+    "url": "https://jackryankaufman.com",
+    "jobTitle": "Doctoral Candidate, Clinical Psychology",
+    "affiliation": { "@type": "Organization", "name": "UT Southwestern Medical Center" },
+    "sameAs": [
+      "https://orcid.org/0009-0004-3673-8741"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,8 +130,52 @@
       opacity: 0.20 !important;
     }
 
+    /* Research statement: cap line length for reading comfort.
+       The card spans the full 64rem column, which would otherwise
+       run lines past 110 characters at lg:text-lg. */
+    .research-statement p {
+      max-width: 68ch;
+      line-height: 1.6;
+    }
 
-    /* Affiliation logo strip — Primary Interests card.
+    /* Dotted threads between the action buttons. Each spacer is a
+       single column of small rust dots that grows to share the
+       height the Research card leaves over, so the buttons stay a
+       uniform size. Below lg the grid stacks, the spacers collapse,
+       and the column's normal gap separates the buttons. */
+    .dot-thread {
+      min-height: 0;
+      background-image: radial-gradient(circle, rgba(140, 86, 55, 0.35) 1.5px, transparent 2px);
+      background-size: 6px 12px;
+      background-repeat: repeat-y;
+      background-position: center 6px;
+    }
+    @media (min-width: 1024px) {
+      .dot-thread { min-height: 1.5rem; }
+    }
+    /* Top and bottom threads only make sense beside the Research
+       card; when stacked they would just pad the column's ends. */
+    @media (max-width: 1023px) {
+      .dot-thread--edge { display: none; }
+    }
+
+    /* Primary Interests: rust square bullets, hung outside the text
+       so wrapped lines align with the first word. */
+    .interest-list {
+      list-style: square;
+      padding-left: 1.1rem;
+    }
+    .interest-list li::marker { color: #8C5637; }
+
+    /* Staggered interest rows: the primary row runs 2:3, the
+       secondary row mirrors it at 3:2, so the gutters don't line up
+       into a window grid. Education below returns to 2:3. */
+    @media (min-width: 1024px) {
+      .cols-3-2 { grid-template-columns: 3fr 2fr; }
+    }
+
+
+    /* Affiliation logo strip — Other Clinical Interests card.
        Marks are desaturated so the page keeps its single warm hue,
        and bloom to full colour on hover/focus. The .space-y-2
        selector outranks Tailwind's sibling margin so the strip
@@ -185,7 +244,7 @@
       <div class="bg-greywash px-5 py-3 flex justify-center items-center gap-4">
         <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
         <span class="text-xs font-semibold tracking-wide uppercase text-white/80">
-          UT Southwestern · Parkland Hospital · McLean Hospital (MGH)
+          UT Southwestern · Cohen Military Family Clinic · McLean Hospital (MGB)
         </span>
         <span class="block w-6 h-px bg-[#8C5637]" aria-hidden="true"></span>
       </div>
@@ -233,41 +292,40 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         DISSERTATION ROW — lead story card + stacked sidebar cards
+         RESEARCH ROW — statement on the left, action buttons on the right
     ════════════════════════════════════════════════════════════ -->
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4">
 
-      <!-- Dissertation card — kintsugi texture + rust left accent -->
-      <article class="bg-white card-surface p-8 lg:p-10 border-l-4 border-l-[#8C5637]"
-        aria-labelledby="dissertation-heading">
-        <span class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] block mb-4">
-          Dissertation:
-        </span>
-        <h2 id="dissertation-heading"
-          class="text-2xl lg:text-3xl font-display font-black tracking-tight leading-tight text-black mb-6">
-          Informing Functional and Health Outcomes of Carepartners in
-          Electroconvulsive Therapy (ECT)
+      <!-- Research statement — placeholder, final copy pending from Jack.
+           Framing and phrases drawn from the OSF preprint (p9yre_v4). -->
+      <section class="bg-white card-surface p-8 lg:p-10" aria-labelledby="research-heading">
+        <h2 id="research-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-4">
+          Research
         </h2>
-        <div class="border-t border-black pt-4">
-          <p class="text-xs font-semibold tracking-wide uppercase">
-            Interventional Psychiatry Research Program (IPRP)
+        <div class="research-statement border-t border-black pt-4 text-base lg:text-lg text-gray-800">
+          <p>
+            Jack's research addresses why many service members and veterans are reluctant to engage
+            with mental health treatments (while active and post-discharge) and how to get them into
+            services. Military operators and those post-separation both require an accurate
+            understanding and appreciation of identity and context (role, purpose, community), and
+            treatments should be tailored with this in mind.
           </p>
-          <p class="text-sm text-gray-500 mt-1">
-            Advisor: Dr. Shawn McClintock, PhD, MSCS
+          <p class="mt-3">
+            A current focus is on developing community-based, culturally relevant interventions that
+            serve veterans “where they are,” consistent with the Department of Veterans Affairs' Whole
+            Health model. Since those least likely to seek care are among the most vulnerable to
+            psychiatric symptoms and suicidal behavior, engagement is key to prevention; Complementary
+            and Integrative Health (CIH) programs may help fill this gap and serve as on-ramps to care
+            for this group.
           </p>
-          <a
-            href="https://jmlewisfoundation.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-xs font-semibold tracking-wide uppercase text-[#8C5637] hover:underline mt-3 inline-block"
-          >
-            Funded · Jerry Lewis Foundation →
-          </a>
         </div>
-      </article>
+      </section>
 
-      <!-- Sidebar: three stacked cards -->
-      <div class="flex flex-col gap-4">
+      <!-- Sidebar: action cards, spaced by dotted threads -->
+      <div class="flex flex-col gap-2">
+
+        <!-- Dotted thread spacer (edge: hidden when stacked) -->
+        <div class="dot-thread dot-thread--edge flex-1" aria-hidden="true"></div>
 
         <!-- CV card -->
         <a href="cv.pdf"
@@ -283,6 +341,9 @@
           </span>
         </a>
 
+        <!-- Dotted thread spacer -->
+        <div class="dot-thread flex-1" aria-hidden="true"></div>
+
         <!-- Email card — primary CTA, lighter rust -->
         <a href="mailto:Jack.Kaufman@utsouthwestern.edu"
           class="block bg-[#8C5637] p-6 group transition-colors duration-150 hover:bg-black active:opacity-75 focus-visible:outline-none"
@@ -297,12 +358,15 @@
           </span>
         </a>
 
+        <!-- Dotted thread spacer -->
+        <div class="dot-thread flex-1" aria-hidden="true"></div>
+
         <!-- Program link card -->
         <a
           href="https://gsbs.utsouthwestern.edu/programs/clinical-psychology/"
           target="_blank"
           rel="noopener noreferrer"
-          class="block bg-white p-6 flex-1 group transition-colors duration-150 hover:bg-black active:opacity-75 focus-visible:bg-black focus-visible:outline-none"
+          class="block bg-white p-6 group transition-colors duration-150 hover:bg-black active:opacity-75 focus-visible:bg-black focus-visible:outline-none"
           aria-label="UTSW Clinical Psychology Program"
         >
           <span class="text-xs font-semibold tracking-wide uppercase text-gray-400 group-hover:text-white/50 block mb-2">
@@ -314,89 +378,171 @@
           </span>
         </a>
 
+        <!-- Dotted thread spacer (edge: hidden when stacked) -->
+        <div class="dot-thread dot-thread--edge flex-1" aria-hidden="true"></div>
+
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         RECENT PUBLICATION
+         SELECTED WORK — two items side by side
     ════════════════════════════════════════════════════════════ -->
-    <section class="bg-white card-surface p-8 lg:p-10" aria-labelledby="recent-work-heading">
-      <h3 id="recent-work-heading" class="text-xs font-semibold tracking-wide uppercase text-[#8C5637] mb-3">Recent Work</h3>
-      <div class="border-t border-black pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+    <section class="bg-white card-surface p-8 lg:p-10" aria-labelledby="selected-work-heading">
+      <h2 id="selected-work-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-4">
+        Selected Work
+      </h2>
+      <ul class="border-t border-black pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
 
-        <!-- Publication -->
-        <div class="flex flex-col sm:pr-6 pb-5 sm:pb-0">
+        <!-- Lead item: veteran pilot study, open-access preprint -->
+        <li class="flex flex-col sm:pr-6 pb-5 sm:pb-0">
           <div class="flex items-center gap-2 mb-4">
-            <span class="text-xs font-semibold tracking-wide uppercase text-gray-400">Publication</span>
+            <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637]">Under review</span>
             <span class="text-xs text-gray-300">·</span>
-            <span class="text-xs text-gray-400">June 2026</span>
+            <span class="text-xs text-gray-400"><em>Military Psychology</em></span>
+          </div>
+          <a href="https://doi.org/10.31234/osf.io/p9yre_v4" target="_blank" rel="noopener noreferrer" class="block mb-3" style="align-self:flex-start;">
+            <img src="assets/images/osf-logo.png" alt="Open Science Framework" width="400" height="150" style="height:36px;width:auto;" loading="lazy" decoding="async">
+          </a>
+          <p class="text-sm font-bold text-black leading-snug mb-2">A single-arm longitudinal pilot study of Brazilian Jiu-Jitsu as a mental health intervention for combat veterans with military-connected disabilities</p>
+          <p class="text-xs text-gray-400 mb-4">Kaufman JR, Evans WR, Haley RW, Cullum CM</p>
+          <a href="https://doi.org/10.31234/osf.io/p9yre_v4" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-1 text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100" style="align-self:flex-start;">
+            <!-- Open Access lock (public-domain symbol), drawn in the page's accent colour -->
+            <svg viewBox="0 0 16 24" width="9" height="13" aria-hidden="true" focusable="false">
+              <path d="M4 11V6.5a4 4 0 0 1 8 0V8" fill="none" stroke="currentColor" stroke-width="2.4"/>
+              <circle cx="8" cy="16.5" r="5.8" fill="none" stroke="currentColor" stroke-width="2.4"/>
+              <circle cx="8" cy="16.5" r="1.9" fill="currentColor"/>
+            </svg>
+            Open Access Preprint →
+          </a>
+        </li>
+
+        <!-- Published paper — title and authors verified against Crossref -->
+        <li class="flex flex-col sm:pl-6 pt-5 sm:pt-0">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637]">Published</span>
+            <span class="text-xs text-gray-300">·</span>
+            <span class="text-xs text-gray-400"><em>Journal of Affective Disorders</em>, 2026</span>
           </div>
           <div class="flex gap-4 flex-1">
             <a href="https://doi.org/10.1016/j.jad.2026.122088" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
               <img src="assets/images/jad-cover.png" alt="Journal of Affective Disorders cover" style="height:72px;width:auto;" class="shadow-sm">
             </a>
-            <div class="flex flex-col justify-between">
-              <div>
-                <p class="text-sm font-bold text-black leading-snug mb-2">Smartphone-based cognitive assessment in older adults with depression: Feasibility and task performance using ecological momentary assessment</p>
-                <p class="text-xs text-gray-400 mb-4">Kaufman JR et al. &nbsp;·&nbsp; <em>Journal of Affective Disorders</em></p>
-              </div>
+            <div class="flex flex-col">
+              <p class="text-sm font-bold text-black leading-snug mb-2">Smartphone-based cognitive assessment in older adults with depression: Feasibility and task performance using ecological momentary assessment</p>
+              <p class="text-xs text-gray-400 mb-4">Kaufman JR et al.</p>
               <a href="https://doi.org/10.1016/j.jad.2026.122088" target="_blank" rel="noopener noreferrer"
-                 class="inline-flex items-center gap-1 text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100" style="align-self:flex-start;margin-bottom:0.5rem;">Read Article →</a>
+                 class="inline-flex items-center gap-1 text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100" style="align-self:flex-start;">Read Article →</a>
             </div>
           </div>
-        </div>
+        </li>
 
-        <!-- Talk -->
-        <div class="flex flex-col sm:pl-6 pt-5 sm:pt-0">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-xs font-semibold tracking-wide uppercase text-gray-400">Talk</span>
-            <span class="text-xs text-gray-300">·</span>
-            <span class="text-xs text-gray-400">June 2025</span>
-          </div>
-          <div class="flex flex-col justify-between flex-1">
-            <div>
-              <p class="text-sm font-bold text-black leading-snug mb-2">"The Development of a Consultation-Liaison Psychologist: From Trainee to Building a Service"</p>
-              <p class="text-xs text-gray-400 mb-4">Panelist &nbsp;·&nbsp; Society for Health Psychology, C-L Psychology Special Interest Group</p>
-              <span class="inline-flex items-center text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)]" style="align-self:flex-start;">Slides available upon request</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      </ul>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         INTERESTS + COLLABORATORS ROW — two equal cards
+         UPCOMING — talks and events. Move each item to the CV-only
+         record once its date passes, or the page reads as stale.
     ════════════════════════════════════════════════════════════ -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <section class="bg-white card-surface p-8 lg:p-10" aria-labelledby="upcoming-heading">
+      <h2 id="upcoming-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-4">
+        Upcoming Talks &amp; Events
+      </h2>
+      <ul class="border-t border-black">
+        <li class="pt-4 flex flex-wrap items-start gap-4">
 
-      <!-- Primary Interests card — expandable via <details>/<summary> -->
+          <!-- Date block -->
+          <time datetime="2026-10-23" class="flex-shrink-0 border-l-4 border-l-[#8C5637] pl-4">
+            <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637] block">Oct</span>
+            <span class="text-2xl lg:text-3xl font-display font-black leading-none text-black block">23</span>
+            <span class="text-xs text-gray-400 block mt-1">2026</span>
+          </time>
+
+          <!-- Details -->
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637]">Panelist</span>
+              <span class="text-xs text-gray-300">·</span>
+              <span class="text-xs text-gray-400">MCON Health · Las Vegas, NV</span>
+            </div>
+            <p class="text-base lg:text-lg font-bold text-black leading-snug mb-2">"Performance Without Limits: Strategies for Mind, Body, and Mission"</p>
+            <p class="text-sm text-gray-600 leading-snug mb-4">
+              A one-day summit on brain health, mental health, care delivery, and suicide prevention for
+              veterans, service members, and military families, held as part of MCON Live 2026.
+            </p>
+            <a href="https://mcon.live/schedule/mcon-health" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1 text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100">Event Details →</a>
+          </div>
+
+        </li>
+      </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PRIMARY INTERESTS + COMMUNITY PARTNERS — the veteran research line (2:3)
+    ════════════════════════════════════════════════════════════ -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_3fr] gap-4">
+
       <section class="bg-white card-surface p-8 lg:p-10" aria-labelledby="interests-heading">
         <h3 id="interests-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-5">
           Primary Interests
         </h3>
 
-        <!-- Trauma & Veteran Health -->
-        <details class="group" open>
-          <summary class="border-t border-black pt-3.5 pb-3.5 cursor-pointer flex justify-between items-center gap-2">
-            <span class="text-sm font-bold text-black leading-tight">Trauma &amp; Veteran Health</span>
-            <span class="text-[#8C5637] font-bold text-base leading-none flex-shrink-0 transition-transform duration-200 group-open:rotate-90 inline-block">›</span>
-          </summary>
-          <div class="pb-4 pl-3 border-l-2 border-[#8C5637] ml-0.5 space-y-2 mt-1">
-            <p class="text-sm text-gray-600">Post traumatic growth &amp; PTSD</p>
-            <p class="text-sm text-gray-600">Transition to civilian life after discharge</p>
-            <p class="text-sm text-gray-600">Lifestyle &amp; complementary interventions</p>
-            <p class="text-sm text-gray-500 italic">(e.g., Brazilian Jiu-Jitsu)</p>
-          </div>
-        </details>
+        <ul class="interest-list border-t border-black pt-4 pb-4 space-y-2 text-sm text-gray-600 leading-snug">
+          <li>PTSD and post-traumatic growth</li>
+          <li>Suicide prevention</li>
+          <li>Transitioning military service members in the period after discharge</li>
+          <li>Engagement and reach: veterans who do not present for care or do not stay</li>
+          <li>Community-based and Complementary and Integrative Health (CIH) interventions <span class="text-gray-500 italic">(e.g., Brazilian Jiu-Jitsu)</span></li>
+        </ul>
 
-        <!-- CL Psychology -->
+        <!-- closing rule -->
+        <div class="border-t border-black"></div>
+      </section>
+
+      <!-- Community Partners — We Defy as Jack's own role, not a collaborator -->
+      <section class="bg-white card-surface p-8 lg:p-10" aria-labelledby="community-partners-heading">
+        <h3 id="community-partners-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-5">
+          Community Partners
+        </h3>
+        <div class="border-t border-black pt-3.5 flex gap-3 items-start">
+          <a href="https://www.wedefyfoundation.org/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+            <img src="assets/images/we-defy-logo.png" alt="We Defy Foundation logo" style="height:64px;width:auto;">
+          </a>
+          <div>
+            <a href="https://www.wedefyfoundation.org/" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-black leading-tight hover:text-[#8C5637] transition-colors duration-100 block">We Defy Foundation</a>
+            <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637] mt-0.5 block">Research Lead · 2024–present</span>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 leading-snug mt-3">
+          We Defy is a 501(c)(3) nonprofit that provides Brazilian Jiu-Jitsu training scholarships to
+          combat veterans coping with military-connected disabilities. Jack leads the foundation's
+          research program, studying whether and how community-based training affects engagement,
+          social connection, and day-to-day functioning among veterans who are frequently not reached
+          by conventional mental health services.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         OTHER CLINICAL INTERESTS + COLLABORATORS — secondary tier (3:2),
+         lighter padding to match Education / Clinical Training
+    ════════════════════════════════════════════════════════════ -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 cols-3-2 gap-4">
+
+      <section class="bg-white card-surface p-6 lg:p-8" aria-labelledby="clinical-interests-heading">
+        <h3 id="clinical-interests-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-5">
+          Other Clinical Interests
+        </h3>
+
         <details class="group" open>
           <summary class="border-t border-black pt-3.5 pb-3.5 cursor-pointer flex justify-between items-center gap-2">
-            <span class="text-sm font-bold text-black leading-tight">CL Psychology &amp; Inpatient Behavioural Health</span>
+            <span class="text-sm font-bold text-black leading-tight">CL Psychology &amp; Inpatient Behavioral Health</span>
             <span class="text-[#8C5637] font-bold text-base leading-none flex-shrink-0 transition-transform duration-200 group-open:rotate-90 inline-block">›</span>
           </summary>
           <div class="pb-4 pl-3 border-l-2 border-[#8C5637] ml-0.5 space-y-2 mt-1">
+            <p class="text-sm text-gray-600">Adjustment to acute medical illness &amp; injury</p>
             <p class="text-sm text-gray-600">Ultra abbreviated interventions</p>
             <p class="text-sm text-gray-600">Focused ACT (acceptance &amp; commitment therapy)</p>
             <p class="text-sm text-gray-600">Brief action planning (BAP) &amp; motivational interviewing</p>
@@ -426,7 +572,7 @@
       </section>
 
       <!-- Collaborators card -->
-      <section class="bg-white card-surface p-8 lg:p-10 flex flex-col" aria-labelledby="collaborators-heading">
+      <section class="bg-white card-surface p-6 lg:p-8 flex flex-col" aria-labelledby="collaborators-heading">
         <h3 id="collaborators-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-5">
           Collaborators
         </h3>
@@ -443,22 +589,35 @@
             <span class="text-xs text-gray-500 mt-1 block">Alleviating Symptoms through Psychiatric Imaging Research &amp; Engineering</span>
             <span class="text-xs text-gray-400 italic mt-1 block">Jodi Weinstein, MD</span>
           </li>
-          <li class="border-t border-black pt-3.5 pb-3.5">
-            <div class="flex gap-3 items-start">
-              <a href="https://www.wedefyfoundation.org/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-                <img src="assets/images/we-defy-logo.png" alt="We Defy Foundation logo" style="height:64px;width:auto;">
-              </a>
-              <div>
-                <a href="https://www.wedefyfoundation.org/" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-black leading-tight hover:text-[#8C5637] transition-colors duration-100 block">We Defy Foundation</a>
-                <span class="text-xs text-gray-500 mt-1 block">A 501(c)(3) nonprofit that provides combat veterans coping with military connected disabilities scholarships to learn and train in Brazilian Jiu-Jitsu.</span>
-              </div>
-            </div>
-          </li>
           <li class="border-t border-black"></li>
         </ul>
       </section>
 
     </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         DISSERTATION — compact, full width, below the research line
+    ════════════════════════════════════════════════════════════ -->
+    <article class="bg-white card-surface p-6 lg:p-8 border-l-4 border-l-[#8C5637]"
+      aria-labelledby="dissertation-heading">
+      <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637] block mb-2">
+        Dissertation
+      </span>
+      <h3 id="dissertation-heading"
+        class="text-base lg:text-lg font-bold leading-snug text-black mb-4">
+        Informing Functional and Health Outcomes of Carepartners in Electroconvulsive Therapy (ECT)
+      </h3>
+      <div class="border-t border-gray-200 pt-3 flex flex-wrap items-center gap-2">
+        <span class="text-xs font-semibold tracking-wide uppercase">Interventional Psychiatry Research Program</span>
+        <span class="text-xs text-gray-300">·</span>
+        <span class="text-xs text-gray-500">Advisor: Shawn McClintock, PhD, MSCS</span>
+        <span class="text-xs text-gray-300">·</span>
+        <a href="https://jmlewisfoundation.org/" target="_blank" rel="noopener noreferrer"
+          class="text-xs font-semibold tracking-wide uppercase text-[#8C5637] hover:underline">
+          Funded · Jerry Lewis Foundation →
+        </a>
+      </div>
+    </article>
 
     <!-- ═══════════════════════════════════════════════════════════
          EDUCATION + CLINICAL TRAINING — separate floating cards
