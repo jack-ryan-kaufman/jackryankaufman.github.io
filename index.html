@@ -385,17 +385,17 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         SELECTED WORK — two items side by side
+         SELECTED WORK — three items side by side (stacked below lg)
     ════════════════════════════════════════════════════════════ -->
     <section class="bg-white card-surface p-8 lg:p-10" aria-labelledby="selected-work-heading">
       <h2 id="selected-work-heading" class="text-sm font-semibold tracking-wide uppercase text-[#8C5637] mb-4">
         Selected Work
       </h2>
-      <ul class="border-t border-black pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+      <ul class="border-t border-black pt-4 grid grid-cols-1 lg:grid-cols-3 gap-4 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
 
         <!-- Lead item: veteran pilot study, open-access preprint -->
-        <li class="flex flex-col sm:pr-6 pb-5 sm:pb-0">
-          <div class="flex items-center gap-2 mb-4">
+        <li class="flex flex-col lg:pr-6 pb-5 lg:pb-0">
+          <div class="flex items-baseline gap-2 mb-4">
             <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637]">Under review</span>
             <span class="text-xs text-gray-300">·</span>
             <span class="text-xs text-gray-400"><em>Military Psychology</em></span>
@@ -417,9 +417,25 @@
           </a>
         </li>
 
+        <!-- Commentary: positioning essay, SfHP newsletter (full text members-only) -->
+        <li class="flex flex-col lg:px-6 py-5 lg:py-0">
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637]">Commentary</span>
+            <span class="text-xs text-gray-300">·</span>
+            <span class="text-xs text-gray-400"><em>The Health Psychologist</em>, Fall 2026</span>
+          </div>
+          <a href="https://societyforhealthpsychology.org/the-health-psychologist/conversation-corner/veteran-psychology-is-health-psychology/" target="_blank" rel="noopener noreferrer" class="block mb-3" style="align-self:flex-start;">
+            <img src="assets/images/SfHP.png" alt="Society for Health Psychology" width="788" height="131" style="height:28px;width:auto;" loading="lazy" decoding="async">
+          </a>
+          <p class="text-sm font-bold text-black leading-snug mb-2">Veteran Psychology IS Health Psychology</p>
+          <p class="text-xs text-gray-400 mb-4">Kaufman JR</p>
+          <a href="https://societyforhealthpsychology.org/the-health-psychologist/conversation-corner/veteran-psychology-is-health-psychology/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-1 text-xs font-bold tracking-wide uppercase text-[#8C5637] bg-[#8C5637]/10 border border-[#8C5637]/25 px-2 py-1 shadow-[0_2px_0_0_rgba(140,86,55,0.25)] hover:shadow-none hover:translate-y-px transition-all duration-100" style="align-self:flex-start;">Read Essay →</a>
+        </li>
+
         <!-- Published paper — title and authors verified against Crossref -->
-        <li class="flex flex-col sm:pl-6 pt-5 sm:pt-0">
-          <div class="flex items-center gap-2 mb-4">
+        <li class="flex flex-col lg:pl-6 pt-5 lg:pt-0">
+          <div class="flex items-baseline gap-2 mb-4">
             <span class="text-xs font-semibold tracking-wide uppercase text-[#8C5637]">Published</span>
             <span class="text-xs text-gray-300">·</span>
             <span class="text-xs text-gray-400"><em>Journal of Affective Disorders</em>, 2026</span>
